@@ -1,0 +1,544 @@
+goto function "Attacking"
+    if (var mobid = %var.player/prevmobid% 0) {
+    } else {
+        var mobhp = %var.player/maxmobhp%
+        var prevmobid = %var.player/mobid%
+        var bdropchance1 = 0.0
+        var bdropchance2 = 0.0
+        var bdropchance3 = 0.0
+        var bdropchance4 = 0.0
+        var bdropchance5 = 0.0
+        var bdropchance6 = 0.0
+        var bdropchance7 = 0.0
+    }
+    if (var level < %stat.player/moblv%) {
+        chat "&7[&c!&7] &cYou don't have enough level to attack this mob! &8[&7%stat.player/level%&8/%stat.player/moblv%]"
+        sound random.anvil_land 0.7 1.0 invokers_location
+        var mobid Unset
+        var moblv Unset
+        var maxmobhp Unset
+        var mobstr Unset
+        var mobxp Unset
+        var mobgold unset
+        pause 5
+        var attacking = 0
+        exit
+    }
+    if (placeholder "%random.int/1 101%" <= %stat.player/cc%) {
+        var damage = %stat.player/str% 
+        var crit = 1 
+        var damage *= %stat.player/cd% 
+        var damage /= 100
+    } else {
+        var damage = %stat.player/str% 
+        var crit unset
+    }
+    if (var takendmgtime = 0 0) {
+        var takendmgtime = 5 true
+    }
+    if () {
+        var takendmg = %var.player/def%
+        var takendmg *= 100
+        var defvar = %var.player/moblv%
+        var defvar /= 2
+        var defvar += %var.player/def% 
+        var takendmg /= %var.player/defvar%
+        var cutdmg = %var.player/takendmg%
+        var takendmg -= 100
+        var takendmg *= -1
+        var takendmg *= %var.player/mobstr%
+        var takendmg /= 100
+    }
+    if (var gmobid >= 1, var mobid = -1 -1) {
+        function "Globalboss Attackling"
+        exit
+    }
+    if () {
+        function "Attack Skill 1"
+        var damage *= %var.player/damagemulti%
+        var damage /= 100
+        var mobhp -= %stat.player/damage% 
+        var mobhpper = %stat.player/mobhp% 
+        var mobhpper *= 100 
+        var mobhpper /= %stat.player/maxmobhp% 
+    }
+    var damagedisplay = %var.player/damage%
+    function "Attacking Title"
+    function "Mob Abilities"
+    if (var mobhp <= 0) {
+        var actionbar = 1
+        var killed += 1
+        var droptimes += 1
+        var mobhp = %var.player/maxmobhp%
+        var mobxp *= %var.player/mobxpmulti%
+        var mobxp /= 100
+        var mobgold *= %var.player/mobgoldmulti%
+        var mobgold /= 100
+        var gold += %var.player/mobgold%
+        var xp += %var.player/mobxp%
+        title "&4[ &c❤ &c&l0 &8/%stat.player/maxmobhp% &4]" "&a&lKILLED! &8( &b+%stat.player/mobxp%✧ &8)" 0 1 1
+        sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    }
+    goto function "Fierce"
+    pause 10
+    var actionbar = 0
+
+goto function "Attacking Title"
+    if (var crit = 0 0, var mobhpper >= 66 0) {
+        title "&2[ &a❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &2]" "&a&l+%stat.player/damagedisplay% &2Damage" 0 1 1
+    }
+    if (var crit = 0 0, var mobhpper >= 33 0, var mobhpper < 66 0) {
+        title "&6[ &e❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &6]" "&a&l+%stat.player/damagedisplay% &2Damage" 0 1 1
+    }
+    if (var crit = 0 0, var mobhpper >= 1 0, var mobhpper < 33 0, var mobhp >= 1 0) {
+        title "&4[ &c❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &4]" "&a&l+%stat.player/damagedisplay% &2Damage" 0 1 1
+    }
+    if (var crit = 1 0, var mobhpper >= 66 0) {
+        title "&2[ &a❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &2]" "&e+&l%stat.player/damagedisplay% &6Damage &e✧" 0 1 1
+    }
+    if (var crit = 1 0, var mobhpper >= 33 0, var mobhpper < 66 0) {
+        title "&6[ &e❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &6]" "&e+&l%stat.player/damagedisplay% &6Damage &e✧" 0 1 1
+    }
+    if (var crit = 1 0, var mobhpper >= 1 0, var mobhpper < 33 0, var mobhp >= 1 0) {
+        title "&4[ &c❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &4]" "&e+&l%stat.player/damagedisplay% &6Damage &e✧" 0 1 1
+    }
+
+//Boss
+if (var attacking = 1 0) {
+    exit
+} else {
+    var attacking = 1
+}
+var moblv = 12
+var mobid unset
+var gmobid = 1
+var maxmobhp = 100000
+var gmaxmobhp = 100k
+var mobxp = 
+var mobgold = 
+
+
+goto function "Globalboss Attacking"
+    function "Attack Skill 1"
+    var damage *= var damagemulti
+    var damage /= 100
+    var gmob/tdmg += var damage
+    if (var gmobid = 1) {
+        globalvar gmobhp1 -= var damage
+        var mobhpper = globalvar gmobhp1
+        var mobhpper *= 100
+        var mobhpper /= var maxmobhp
+        var damagedisplay = var damage
+        var mobhp = globalvar gmobhp1
+    }
+    function "Attacking Title"
+    function "Mob Abbilities"
+    if (var mobhp <= 0) {
+        globalvar gmobid = var gmobid
+        function "Globalboss Defeat" true
+    }
+    var fiercevar = var fierce
+    goto function "Global Fierce/Extrahit"
+    pause 10
+    var actionbar = 0
+
+goto function "Fierce/Extrahit"
+    if or (placeholder %random.int/1 101% <= %var.player/fiercevar%, var extraattack = 1 0) {
+        var fiercevar -= 100
+    } else {
+        var fiercevar unset
+        var fiercetime unset
+        exit
+    }
+    if (var extraattack >= 1 0) {
+        var fiercevar -= 100
+        var extraattack -= 1 
+        var extraattacktime += 1
+    } else {
+        var fiercetime += 1
+        var extraattacktime unset
+        var extraattack unset
+    }
+    pause 1
+    var mobhp -= %var.player/damage%
+    if (var mobhp >= 1 0, var extraattack >= 0 -1) {
+        title "&a[ &b❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &b]" "&b☄&l2x &a &l+%var.player/damage%&2 Damage" 0 1 1
+        sound "Arrow Hit" 0.7 0.8 "Invokers Location"
+        sound "Lava Pop" 0.7 1.2 "Invokers Location"
+        sound "Enderdragon Hit" 0.7 2.0 "Invokers Location"
+        sound "block.piston.extend" 0.7 2.0 "Invokers Location"
+    } 
+    if (var mobhp >= 1 0, var extraattack = -1 -1) {
+        title "&c[ &c❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &c]" "&c&l҉%var.player/fiercetime%x &a &l+%var.player/damage%&2 Damage" 0 1 1
+        sound "Shoot Arrow" 0.7 0.1 "Invokers Location"
+        sound "Irongolem Throw" 0.7 0.8 "Invokers Location"
+        sound "Chest Close" 0.7 2.0 "Invokers Location"
+        sound "Zombie Woodbreak" 0.7 1.5 "Invokers Location"
+    }
+    if (var mobhp <= 0) {
+        var actionbar = 1
+        var killed += 1
+        var droptimes += 1
+        var mobhp = var maxmobhp
+        var mobxp *= var mobxpmulti
+        var mobxp /= 100
+        var mobgold *= var mobgoldmulti
+        var xp += var mobxp
+        var gold += var mobgold
+        title "&4[ &c❤ &c&l0 &8/%stat.player/maxmobhp% &4]" "&a&lKILLED! &8( &b+%stat.player/mobxp%✧ &8)" 0 1 1
+        sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+        var crit unset
+    }
+    if or (placeholder %random.int/1 101% <= %var.player/fiercevar%, var extraattack = 1 0) {
+        var fiercevar -= 100
+    } else {
+        var fiercevar unset
+        var fiercetime unset
+        exit
+    }
+    if (var extraattack >= 1 0) {
+        var fiercevar -= 100
+        var extraattack -= 1 
+        var extraattacktime += 1
+    } else {
+        var fiercetime += 1
+        var extraattacktime unset
+        var extraattack unset
+    }
+    pause 1
+    var mobhp -= %var.player/damage%
+    if (var mobhp >= 1 0, var extraattack >= 0 -1) {
+        title "&a[ &b❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &b]" "&b☄&l2x &a &l+%var.player/damage%&2 Damage" 0 1 1
+        sound "Arrow Hit" 0.7 0.8 "Invokers Location"
+        sound "Lava Pop" 0.7 1.2 "Invokers Location"
+        sound "Enderdragon Hit" 0.7 2.0 "Invokers Location"
+        sound "block.piston.extend" 0.7 2.0 "Invokers Location"
+    } 
+    if (var mobhp >= 1 0, var extraattack = -1 -1) {
+        title "&c[ &c❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &c]" "&c&l҉%var.player/fiercetime%x &a &l+%var.player/damage%&2 Damage" 0 1 1
+        sound "Shoot Arrow" 0.7 0.1 "Invokers Location"
+        sound "Irongolem Throw" 0.7 0.8 "Invokers Location"
+        sound "Chest Close" 0.7 2.0 "Invokers Location"
+        sound "Zombie Woodbreak" 0.7 1.5 "Invokers Location"
+    }
+    if (var mobhp <= 0) {
+        var actionbar = 1
+        var killed += 1
+        var droptimes += 1
+        var mobhp = var maxmobhp
+        var mobxp *= var mobxpmulti
+        var mobxp /= 100
+        var mobgold *= var mobgoldmulti
+        var xp += var mobxp
+        var gold += var mobgold
+        title "&4[ &c❤ &c&l0 &8/%stat.player/maxmobhp% &4]" "&a&lKILLED! &8( &b+%stat.player/mobxp%✧ &8)" 0 1 1
+        sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+        var crit unset
+    }
+    if or (placeholder %random.int/1 101% <= %var.player/fiercevar%, var extraattack = 1 0) {
+        var fiercevar -= 100
+    } else {
+        var fiercevar unset
+        var fiercetime unset
+        exit
+    }
+    if (var extraattack >= 1 0) {
+        var fiercevar -= 100
+        var extraattack -= 1 
+        var extraattacktime += 1
+    } else {
+        var fiercetime += 1
+        var extraattacktime unset
+        var extraattack unset
+    }
+    pause 1
+    var mobhp -= %var.player/damage%
+    if (var mobhp >= 1 0, var extraattack >= 0 -1) {
+        title "&a[ &b❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &b]" "&b☄&l2x &a &l+%var.player/damage%&2 Damage" 0 1 1
+        sound "Arrow Hit" 0.7 0.8 "Invokers Location"
+        sound "Lava Pop" 0.7 1.2 "Invokers Location"
+        sound "Enderdragon Hit" 0.7 2.0 "Invokers Location"
+        sound "block.piston.extend" 0.7 2.0 "Invokers Location"
+    } 
+    if (var mobhp >= 1 0, var extraattack = -1 -1) {
+        title "&c[ &c❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &c]" "&c&l҉%var.player/fiercetime%x &a &l+%var.player/damage%&2 Damage" 0 1 1
+        sound "Shoot Arrow" 0.7 0.1 "Invokers Location"
+        sound "Irongolem Throw" 0.7 0.8 "Invokers Location"
+        sound "Chest Close" 0.7 2.0 "Invokers Location"
+        sound "Zombie Woodbreak" 0.7 1.5 "Invokers Location"
+    }
+    if (var mobhp <= 0) {
+        var actionbar = 1
+        var killed += 1
+        var droptimes += 1
+        var mobhp = var maxmobhp
+        var mobxp *= var mobxpmulti
+        var mobxp /= 100
+        var mobgold *= var mobgoldmulti
+        var xp += var mobxp
+        var gold += var mobgold
+        title "&4[ &c❤ &c&l0 &8/%stat.player/maxmobhp% &4]" "&a&lKILLED! &8( &b+%stat.player/mobxp%✧ &8)" 0 1 1
+        sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+        var crit unset
+    }
+    if or (placeholder %random.int/1 101% <= %var.player/fiercevar%, var extraattack = 1 0) {
+        var fiercevar -= 100
+    } else {
+        var fiercevar unset
+        var fiercetime unset
+        exit
+    }
+    if (var extraattack >= 1 0) {
+        var fiercevar -= 100
+        var extraattack -= 1 
+        var extraattacktime += 1
+    } else {
+        var fiercetime += 1
+        var extraattacktime unset
+        var extraattack unset
+    }
+    pause 1
+    var mobhp -= %var.player/damage%
+    if (var mobhp >= 1 0, var extraattack >= 0 -1) {
+        title "&a[ &b❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &b]" "&b☄&l2x &a &l+%var.player/damage%&2 Damage" 0 1 1
+        sound "Arrow Hit" 0.7 0.8 "Invokers Location"
+        sound "Lava Pop" 0.7 1.2 "Invokers Location"
+        sound "Enderdragon Hit" 0.7 2.0 "Invokers Location"
+        sound "block.piston.extend" 0.7 2.0 "Invokers Location"
+    } 
+    if (var mobhp >= 1 0, var extraattack = -1 -1) {
+        title "&c[ &c❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &c]" "&c&l҉%var.player/fiercetime%x &a &l+%var.player/damage%&2 Damage" 0 1 1
+        sound "Shoot Arrow" 0.7 0.1 "Invokers Location"
+        sound "Irongolem Throw" 0.7 0.8 "Invokers Location"
+        sound "Chest Close" 0.7 2.0 "Invokers Location"
+        sound "Zombie Woodbreak" 0.7 1.5 "Invokers Location"
+    }
+    if (var mobhp <= 0) {
+        var actionbar = 1
+        var killed += 1
+        var droptimes += 1
+        var mobhp = var maxmobhp
+        var mobxp *= var mobxpmulti
+        var mobxp /= 100
+        var mobgold *= var mobgoldmulti
+        var xp += var mobxp
+        var gold += var mobgold
+        title "&4[ &c❤ &c&l0 &8/%stat.player/maxmobhp% &4]" "&a&lKILLED! &8( &b+%stat.player/mobxp%✧ &8)" 0 1 1
+        sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+        var crit unset
+    }
+    if or (placeholder %random.int/1 101% <= %var.player/fiercevar%, var extraattack = 1 0) {
+        var fiercevar -= 100
+    } else {
+        var fiercevar unset
+        var fiercetime unset
+        exit
+    }
+    if (var extraattack >= 1 0) {
+        var fiercevar -= 100
+        var extraattack -= 1 
+        var extraattacktime += 1
+    } else {
+        var fiercetime += 1
+        var extraattacktime unset
+        var extraattack unset
+    }
+    pause 1
+    var mobhp -= %var.player/damage%
+    if (var mobhp >= 1 0, var extraattack >= 0 -1) {
+        title "&a[ &b❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &b]" "&b☄&l2x &a &l+%var.player/damage%&2 Damage" 0 1 1
+        sound "Arrow Hit" 0.7 0.8 "Invokers Location"
+        sound "Lava Pop" 0.7 1.2 "Invokers Location"
+        sound "Enderdragon Hit" 0.7 2.0 "Invokers Location"
+        sound "block.piston.extend" 0.7 2.0 "Invokers Location"
+    } 
+    if (var mobhp >= 1 0, var extraattack = -1 -1) {
+        title "&c[ &c❤ &l%stat.player/mobhp% &l&7/%stat.player/maxmobhp% &c]" "&c&l҉%var.player/fiercetime%x &a &l+%var.player/damage%&2 Damage" 0 1 1
+        sound "Shoot Arrow" 0.7 0.1 "Invokers Location"
+        sound "Irongolem Throw" 0.7 0.8 "Invokers Location"
+        sound "Chest Close" 0.7 2.0 "Invokers Location"
+        sound "Zombie Woodbreak" 0.7 1.5 "Invokers Location"
+    }
+    if (var mobhp <= 0) {
+        var actionbar = 1
+        var killed += 1
+        var droptimes += 1
+        var mobhp = var maxmobhp
+        var mobxp *= var mobxpmulti
+        var mobxp /= 100
+        var mobgold *= var mobgoldmulti
+        var xp += var mobxp
+        var gold += var mobgold
+        title "&4[ &c❤ &c&l0 &8/%stat.player/maxmobhp% &4]" "&a&lKILLED! &8( &b+%stat.player/mobxp%✧ &8)" 0 1 1
+        sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+        var crit unset
+    }
+
+goto function "Global Fierce/Extrahit"
+    if or (placeholder %random.int/1 101% <= %var.player/fiercevar%, var extraattack = 1 0) {
+        var fiercevar -= 100
+    } else {
+        var fiercevar unset
+        var fiercetime unset
+        exit
+    }
+    if (var extraattack >= 1 0) {
+        var fiercevar -= 100
+        var extraattack -= 1 
+        var extraattacktime += 1
+    } else {
+        var fiercetime += 1
+        var extraattacktime unset
+        var extraattack unset
+    }
+    pause 1
+    var gmob/tdmg += %var.player/damage%
+    var gmobhp -= %var.player/damage%
+    if (var gmobhp >= 1 0) {
+        sound "Irongolem Hit" 0.7 1.5 "Invokers Location"
+        title "%var.player/gmobhpper1%" "&a▶&l %var.player/damage% &7dmg&8 ・ &f☠ %var.player/gmobhp%&8/%var.player/gmaxmobhp%" 0 2 1
+        pause 3
+        title "%var.player/gmobhpper2%" "&a▶&l %var.player/damage% &7dmg&8 ・ &c☠ %var.player/gmobhp%&8/%var.player/gmaxmobhp%" 0 2 1
+    } else {
+        sound "Irongolem Hit" 0.7 1.5 "Invokers Location"
+        title "%var.player/gmobhpper1%" "&a▶&l %var.player/damage% &7dmg&8 ・ &f☠ %var.player/gmobhp%&8/%var.player/gmaxmobhp%" 0 2 1
+        pause 3
+        title "%var.player/gmobhpper2%" "&a▶&l %var.player/damage% &7dmg&8 ・ &c☠ 0&8/%var.player/gmaxmobhp%" 0 2 1
+    }
+    if (var mobhp <= 0) {
+        var crit unset
+        globalvar gmobid = var gmobid
+        function "Globalboss Defeat" true
+    }
+
+goto function "Globalboss Loading"
+    if (!var gmobid >= 1) {
+        exit
+    }
+    if (var gmobid = 1) {
+        var gmobhp = globalvar gmobhp1
+    }
+    pause 1
+    if (var gmobid = 1) {
+        var gmobhp = globalvar gmobhp1
+    }
+    pause 1
+    if (var gmobid = 1) {
+        var gmobhp = globalvar gmobhp1
+    }
+    pause 1
+    if (var gmobid = 1) {
+        var gmobhp = globalvar gmobhp1
+    }
+    pause 1
+    if (var gmobid = 1) {
+        var gmobhp = globalvar gmobhp1
+    }
+    var gmobhpper = var mobhp
+    var gmobhpper *= 100
+    var gmobhpper /= var maxmobhp
+    if (var gmobhpper >= 90) {
+        var gmobhpper1 = &f■■■■■■■■■■
+        var gmobhpper2 = &c■■■■■■■■■■
+    }
+    if (var gmobhpper >= 80) {
+        var gmobhpper1 = &f■■■■■■■■■&8■
+        var gmobhpper2 = &c■■■■■■■■■&8■
+    }
+    if (var gmobhpper >= 70) {
+        var gmobhpper1 = &f■■■■■■■■&8■■
+        var gmobhpper2 = &c■■■■■■■■&8■■
+    }
+    if (var gmobhpper >= 60) {
+        var gmobhpper1 = &f■■■■■■■&8■■■
+        var gmobhpper2 = &c■■■■■■■&8■■■
+    }
+    if (var gmobhpper >= 50) {
+        var gmobhpper1 = &f■■■■■■&8■■■■
+        var gmobhpper2 = &c■■■■■■&8■■■■
+    }
+    if (var gmobhpper >= 40) {
+        var gmobhpper1 = &f■■■■■&8■■■■■
+        var gmobhpper2 = &c■■■■■&8■■■■■
+    }
+    if (var gmobhpper >= 30) {
+        var gmobhpper1 = &f■■■■&8■■■■■■
+        var gmobhpper2 = &c■■■■&8■■■■■■
+    }
+    if (var gmobhpper >= 20) {
+        var gmobhpper1 = &f■■■&8■■■■■■■
+        var gmobhpper2 = &c■■■&8■■■■■■■
+    }
+    if (var gmobhpper >= 10) {
+        var gmobhpper1 = &f■■&8■■■■■■■■
+        var gmobhpper2 = &c■■&8■■■■■■■■
+    }
+    if (var gmobhpper > 0) {
+        var gmobhpper1 = &f■&8■■■■■■■■■
+        var gmobhpper2 = &c■&8■■■■■■■■■
+    } else {
+        var gmobhpper1 = &8■■■■■■■■■■
+        var gmobhpper2 = &8■■■■■■■■■■
+    }
+
+goto function "Globalboss Ranking"
+    if (var gmob/tdmg > globalvar gmob/rank1/tdmg) {
+        globalvar gmob/rank1 = %player.name%
+        globalvar gmob/rank1/tdmg = var tdmg
+        var gdroptimes = 5
+    }
+    pause 1
+    if (!globalvar gmob/rank1 = %player.name%, var gmob/tdmg > globalvar gmob/rank2/tdmg) {
+        globalvar gmob/rank2 = %player.name%
+        globalvar gmob/rank2/tdmg = var tdmg
+        var gdroptimes = 3
+    }
+    pause 1
+    if (!globalvar gmob/rank1 = %player.name%, !globalvar gmob/rank2 = %player.name%, var gmob/tdmg > globalvar gmob/rank3/tdmg) {
+        globalvar gmob/rank3 = %player.name%
+        globalvar gmob/rank3/tdmg = var tdmg
+        var gdroptiems = 2
+    }
+    
+goto function "Globalboss Defeat"
+    if (globalvar gmobid = 1, var gmobid = 1) {
+        function "Globalboss Ranking"
+        function "Globalboss Reward"
+    }
+    if (globalvar gmobid = 1) {
+        sound "Wither Death" 0.7 1.0 "Invokers Location"
+        chat "&4&m&l----------------------------------------"
+        chat "&4&l[Global Boss] &e&lSandworm &chas defeated..."
+        chat "&7Best Damage Player:"
+        chat "&7 &e#1 &a%var.global/gmob/rank1%&f: &c%var.global/gmob/rank1/tdmg% &c☠ Damage"
+        chat "&7 &7#2 &a%var.global/gmob/rank2%&f: &c%var.global/gmob/rank2/tdmg% &c☠ Damage"
+        chat "&7 &6#3 &a%var.global/gmob/rank3%&f: &c%var.global/gmob/rank3/tdmg% &c☠ Damage"
+        chat "&4&m&l----------------------------------------"
+        pause 50
+        var gmob/tdmg unset
+        globalvar gmob/rank1 unset
+        globalvar gmob/rank2 unset
+        globalvar gmob/rank3 unset
+        globalvar gmob/rank1/tdmg unset
+        globalvar gmob/rank2/tdmg unset
+        globalvar gmob/rank3/tdmg unset
+        globalvar gmobid unset
+    }
+
+goto function "Globalboss Reward"
+    if (var gdroptimes >= 1) {
+        var gdroptimes -= 1
+    } else {
+        var gmobid unset
+        var gdroptimes unset
+        exit
+    }
+    if (var gmobid = 1) {
+        giveItem slot_1 true 
+        giveItem slot_2 true
+        timer add += 1
+        
+    }
+
+    
+    

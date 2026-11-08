@@ -1,0 +1,323 @@
+goto function "Item Stats"
+    if (hasItem slot_1 Metadata Hand "Any Amount") {
+        var eff +=
+        var mpower += 
+    }
+
+goto function "Mine Event"
+    if (!var tpower >= %var.player/blockhardly%, var blockid < 100 0) {
+        chat "&7[&c!&7] &cYou cannot break the block due to a lack of &2&lTimber Power&c!"
+        sound "Anvil Land" 0.7 1.0 "Invokers Location"
+        exit
+    }
+    if (!var mpower >= %var.player/blockhardly%, var blockid >= 100 0) {
+        chat "&7[&c!&7] &cYou cannot break the block due to a lack of &2&lMining Power&c!"
+        sound "Anvil Land" 0.7 1.0 "Invokers Location"
+        exit
+    }
+    if (!var blockid = %var.player/prevblockid% 0) {
+        var prevblockid = %var.player/blockid%
+        var ceff = 0
+    }
+    var actionbar = 5
+    var ceff += %var.player/eff%
+    var effper = %var.player/ceff%
+    var effper *= 100
+    var effper /= %var.player/beff%
+    if (var ceff >= %var.player/beff%) {
+        title "&a&lMINED!" "&8( &7&l%var.player/beff% &8/ %var.player/beff% )" 0 1 1
+        sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+        var ceff = 0
+    } else {
+        title "&a&l%var.player/effper%%" "&8( &7&l%var.player/ceff% &8/ %var.player/beff% )" 0 1 1
+        exit
+    }
+    if (var blockid < 100) {
+        var clogs += 1
+    }
+    if (var blockid >= 100) {
+        var cmined += 1
+    }
+    if (var blockid = 1) {
+        giveItem slot_28 true
+    }
+    if (var blockid = 2) {
+        giveItem slot_29 true
+    }
+    var minedropchance = 20
+    var minedropchance *= %var.player/woodmf%
+    if (var blockid = 1, placeholder %random.int/1 10001% <= %var.player/minedropchance%) {
+        giveItem slot_30 true
+        chat "&7[&a!&7] You found a &aCedar Log&7!"
+        sound "Item Pickup" 0.7 1.0 "Invokers Location"
+    }
+    var minedropchance = 5
+    var minedropchance *= %var.player/woodmf%
+    if (var blockid = 1, placeholder %random.int/1 10001% <= %var.player/minedropchance%) {
+        giveItem slot_31 true
+        chat "&7[&a!&7] You found a &9Mahogany Log&7!"
+        sound "Item Pickup" 0.7 1.0 "Invokers Location"
+    }
+    if (var blockid >= 100, var petab = 2, placeholder %random.int/1 101% <= 20) {
+        giveItem slot_28
+    }
+    var random = %random.int/1 101%
+    if (var blockid >= 100, var blockid <= 104, var random <= 20, var mspawnable = 1) {
+        tp "custom_coordinates" "118.5 5 -110.5 0 10" true
+        chat "&7[&a!&7] &6Rusty Mole &7spawned!"
+    }
+    if (var blockid >= 100, var blockid <= 104, var random <= 5, var mspawnable = 1) {
+        tp "custom_coordinates" "118.5 5 -90.5 0 10" true
+        chat "&7[&a!&7] &fSand Crewer"
+    }
+    var minedropchance = 4
+    var minedropchance = %var.player/woodmf%
+    if (var blockid = 2, placeholder %random.int/1 10001% <= &var.player/minedropchance%) {
+        giveItem slot_30 true
+        chat "&7[&a!&7] You found a &aSilver Pine&7!"
+        sound "Item Pickup" 0.7 1.0 "Invokers Location"
+    }
+    var minedropchance = 2
+    var minedropchance = %var.player/woodmf%
+    if (var blockid = 2, placeholder %random.int/1 10001% <= %var.player/minedropchance%) {
+        giveItem slot_31 true
+        chat "&7[&a!&7] You found a &9Ember Oak Log&7!"
+        sound "Item Pickup" 0.7 1.0 "Invokers Location"
+    }
+    var minedropchance = 1
+    var minedropchance = %var.player/woodmf%
+    if (var blockid = 2, placeholder %random.int/1 10001% <= %var.player/minedropchance%) {
+        giveItem slot_32 true
+        chat "&7[&a!&7] You found a &5Golden Maple&7!"
+    }
+goto event "Player Block Break"
+    if (blockType slot_28 true) {
+        var blockid = 1
+        var blockhardly = 1
+        var beff = 100
+        var minetime = 20
+        function "Mine Event"
+    }
+    if (blockType slot_28 true) {
+        var blockid = 100
+        var blockhardly = 1
+        var beff = 20
+        var minetime = 20
+        function "Mine Event"
+    }
+    if (blockType slot_29 true) {
+        var blockid = 101
+        var blockhardly = 2
+        var beff = 45
+        var minetime = 20
+        function "Mine Event"
+    }
+    if (blockType slot_30 true) {
+        var blockid = 102
+        var blockhardly = 3
+        var beff = 65
+        var minetime = 20
+        function "Mine Event"
+    }
+    if (blockType slot_31 true) {
+        var blockid = 103
+        var blockhardly = 4
+        var beff = 80
+        var minetime = 20
+        function "Mine Event"
+    }
+    if (blockType slot_32 true) {
+        var blockid = 104
+        var blockhardly = 5
+        var beff = 120
+        var minetime = 20
+        function "Mine Event"
+    }
+    if (blockType slot_28 true) {
+        var blockid = 2
+        var blockhardly = 2
+        var beff = 500
+        var minetime = 20
+        function "Mine Event"
+    }
+goto function "Mine End"
+    if (var minetime >= 1 0) {
+        var minetime -= 1
+        var cminetime += 5D
+    }
+    if (var minetime >= 1 0, var blockid < 100) {
+        set 0 = %var.player/clogs%D
+        var clogs/ps /= %var.player/cminetime%
+        var clogs/ps *= 20
+    }
+    if (var minetime >= 1 0, var blockid >= 100) {
+        var cmined/ps = %var.player/cmined%D
+        var cmined/ps /= %var.player/cminetime%
+        var cmined/ps *= 20
+    }
+    if (var minetime = 12) {
+        sound "Note Snare Drum" 0.7 1.0 "Invokers Location"
+        title "&a●&a &a &a &7●&a &a &a &7●" "&a" 0 1 1
+    }
+    if (var minetime = 8) {
+        sound "Note Snare Drum" 0.7 1.0 "Invokers Location"
+        title "&a●&a &a &a &a●&a &a &a &7●" "&a" 0 1 1
+    }
+    if (var minetime = 4) {
+        sound "Note Snare Drum" 0.7 1.0 "Invokers Location"
+        title "&a●&a &a &a &a●&a &a &a &a●" "&a" 0 1 1
+    }
+    if (var minetime = 0, var blockid < 100) {
+        var actionbar = 3
+        var cminetime -= %random.int/95 100%D
+        var cminetime /= 20D
+        chat "&7[&a!&7] &7Mined &a&l%var.player/clogs%✎ Logs &7in &6%var.player/cminetime%s&7!"
+        sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+        var logs += %var.player/clogs%
+        var minetime unset
+        var effper unset
+        var beff unset
+        var minedropchance unset
+        var blockhardly unset
+    }
+    if (var minetime = 0, var blockid >= 100) {
+        var actionbar = 4
+        var cminetime -= %random.int/95 100%D
+        var cminetime /= 20D
+        chat "&7[&a!&7] &7Mined &a&l%var.player/cmined%✎ Ores &7in &6%var.player/cminetime%s&7!"
+        sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+        var mined += %var.player/cmined%
+        var minetime unset
+        var effper unset
+        var beff unset
+        var minedropchance unset
+        var blockhardly unset
+    }
+
+goto function "Action Bar"
+    if (var actionbar = 3) {
+        actionBar "&6&l⸕%var.player/eff%&7 &7 &a&l%var.player/clogs%&ax Mined &7(&3+%var.player/bxp%✧ &a%var.player/logs%✎&7) &7 &d☘&l%var.player/woodmf%&7 (&a%var.player/clogs/ps%✎&7/hit)"
+        pause 30
+        var clogs = 0
+        var bxp unset
+        var clogs/ps unset
+        var cminetime unset
+        var blockid unset
+        var actionbar = 0
+    }
+    if (var actionbar = 4) {
+        actionBar "&6&l⸕%var.player/eff%&7 &7 &a&l%var.player/cmined%&ax Mined &7(&3+%var.player/bxp%✧ &a%var.player/logs%✎&7) &7 &d☘&l%var.player/woodmf%&7 (&a%var.player/cmined/ps%✎&7/hit)"
+        pause 30
+        var cmined = 0
+        var bxp unset
+        var clogs/ps unset
+        var cminetime unset 
+        var blockid unset
+        var actionbar = 0   
+    }
+    if (var actionbar = 5, var blockid < 100) {
+        function "Mining Value Convert"
+        actionBar "&6&l⸕%var.player/eff%&7 &7 &3✧ &l%var.player/d/fxp%&7/%var.player/d/reqfxp% %var.player/d/lvprog% &7(&3+&l%var.player/bxp%&3✧&7) &7 &d☘%var.player/woodmf%&l&7 (&a%var.player/clogs/ps%✎&7/hit)"
+        var d/fxp unset
+        var d/reqfxp unset
+        var d/lvprog unset
+    }
+    if (var actionbar = 5, var blockid >= 100) {
+        function "Mining Value Convert"
+        actionBar "&6&l⸕%var.player/eff%&7 &7 &3✧ &l%var.player/d/mxp%&7/%var.player/d/reqmxp% %var.player/d/lvprog% &7(&3+&l%var.player/bxp%&3✧&7) &7 &d☘%var.player/minemf%&l&7 (&a%var.player/cmined/ps%✎&7/hit)"
+        var d/fxp unset
+        var d/reqfxp unset
+        var d/lvprog unset
+    }
+
+goto function "Mining Value Convert"
+    if (var blockid < 100) {
+        var vcvalue = %var.player/reqfxp%D
+    }
+    if (var blockid >= 100) {
+        var vcvalue = %var.player/reqmxp%D
+    }
+    if (var vcvalue >= 1000000) {
+        var vcvalue /= 1000000D
+        var vcvalue = &3&l%var.player/vcvalue%&3m
+    }
+    if (var vcvalue >= 1000, var vcvalue < 1000000) {
+        var vcvalue /= 1000D
+        var vcvalue = &3&l%var.player/vcvalue%&3k
+    }
+    if (var blockid < 100) {
+        var d/reqfxp = %var.player/vcvalue%
+        var vcvalue = %var.player/fxp%D
+    }
+    if (var blockid >= 100) {
+        var d/reqmxp = %var.player/vcvalue%
+        var vcvalue = %var.player/mxp%D
+    }
+    if (var vcvalue >= 1000000) {
+        var vcvalue /= 1000000D
+        var vcvalue = &3&l%var.player/vcvalue%&3m
+    }
+    if (var vcvalue >= 1000, var vcvalue < 1000000) {
+        var vcvalue /= 1000D
+        var vcvalue = &3&l%var.player/vcvalue%&3k
+    }
+    if (var blockid < 100) {
+        var d/fxp = %var.player/vcvalue%
+    }
+    if (var blockid >= 100) {
+        var d/mxp = %var.player/vcvalue%
+    }
+    if (var blockid < 100) {
+        var lvprog = %var.player/fxp%
+        var lvprog *= 100
+        var lvprog /= %var.player/reqfxp%
+    }
+    if (var blockid >= 100) {
+        var lvprog = %var.player/mxp%
+        var lvprog *= 100
+        var lvprog /= %var.player/reqmxp%
+    }
+    if (var lvprog >= 90) {
+        var d/lvprog = &3■■■■■■■■■&8■ 
+        exit
+    }
+    if (var lvprog >= 80) {
+        var d/lvprog = &3■■■■■■■■&8■■ 
+        exit
+    }
+    if (var lvprog >= 70) {
+        var d/lvprog = &3■■■■■■■&8■■■ 
+        exit
+    }
+    
+    if (var lvprog >= 60) {
+        var d/lvprog = &3■■■■■■&8■■■■ 
+        exit
+    }
+    
+    if (var lvprog >= 50) {
+        var d/lvprog = &3■■■■■&8■■■■■ 
+        exit
+    }
+    
+    if (var lvprog >= 40) {
+        var d/lvprog = &3■■■■&8■■■■■■ 
+        exit
+    }
+    
+    if (var lvprog >= 30) {
+        var d/lvprog = &3■■■&8■■■■■■■ 
+        exit
+    }
+    
+    if (var lvprog >= 20) {
+        var d/lvprog = &3■■&8■■■■■■■■ 
+        exit
+    }
+    if (var lvprog >= 10) {
+        var d/lvprog = &3■&8■■■■■■■■■ 
+        exit
+    } else {
+        var d/lvprog = &8■■■■■■■■■■ 
+    }
+    

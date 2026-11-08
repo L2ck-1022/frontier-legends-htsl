@@ -1,0 +1,107 @@
+goto command "/afkattack"
+    if (var afk = 2 0) {
+        chat "&7[&a!&7] &7Disabled Afk Attack!"
+        sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+        var afk unset
+        var afk/posx1 unset
+        var afk/posy1 unset
+        var afk/posz1 unset
+        var afk/posx2 unset
+        var afk/posy2 unset
+        var afk/posz2 unset
+        exit
+    }
+    var afk = 1
+    var afk/posx1 = 0.0
+    var afk/posy1 = 255.0
+    var afk/posz1 = 0.0
+    if (var mobid = 1) {
+        var afk/posx1 = 54.0
+        var afk/posy1 = 103.0
+        var afk/posz1 = -50.0
+    }
+    if (var mobid = 2) {
+        var afk/posx1 = 41.0
+        var afk/posy1 = 103.0
+        var afk/posz1 = -37.0
+    }
+    if (var mobid = 3) {
+        var afk/posx1 = 51.0
+        var afk/posy1 = 103.0
+        var afk/posz1 = -36.0
+    }
+    if (var mobid = 4) {
+        var afk/posx1 = 39.0
+        var afk/posy1 = 103.0
+        var afk/posz1 = -72.0
+    }
+    if (var mobid = 11) {
+        var afk/posx1 = 8.0
+        var afk/posy1 = 107.0
+        var afk/posz1 = -96.0
+    }
+    if (var mobid = 12) {
+        var afk/posx1 = -3.0
+        var afk/posy1 = 104.0
+        var afk/posz1 = -93.0
+    }
+    if (var mobid = 13) {
+        var afk/posx1 = 2.0
+        var afk/posy1 = 108.0
+        var afk/posz1 = -82.0
+    }
+    if (var mobid = 14) {
+        var afk/posx1 = -13.0
+        var afk/posy1 = 107.0
+        var afk/posz1 = -82.0
+    }
+    if (var mobid = 21) {
+        var afk/posx1 = -3.0
+        var afk/posy1 = 118.0
+        var afk/posz1 = -56.0
+    }
+    if (var mobid = 22) {
+        var afk/posx1 = 7.0
+        var afk/posy1 = 118.0
+        var afk/posz1 = -56.0
+    }
+    var afk/posx2 = %var.player/afk/posx1%
+    var afk/posx2 -= 3.0
+    var afk/posy2 = %var.player/afk/posy1%
+    var afk/posy2 += 3.0
+    var afk/posz2 = %var.player/afk/posz1%
+    var afk/posz2 += 3.0
+
+goto function "Afk Attack"
+    if (var afk = 0 0) {
+        exit
+    }
+    if (var afk = 1 0, placeholder %player.pos.x% <= %var.player/afk/posx1%, placeholder %player.pos.x% >= %var.player/afk/posx2%, placeholder %player.pos.y% >= %var.player/afk/posy1%, placeholder %player.pos.y% <= %var.player/afk/posy2%, placeholder %player.pos.z% >= %var.player/afk/posz1%, placeholder %player.pos.z% <= %var.player/afk/posz2%) {
+        var afk = 2
+        chat "&7[&a!&7] &7Enabled Afk Attack!"
+        sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+        exit
+    } 
+    if (var afk = 1 0) {
+        sound "Anvil Land" 0.7 1.0 "Invokers Location"
+        chat "&7[&c!&7] &c&lERROR! &cYou need to be near the enemy! &8( Also you need to click the npc once )"
+        var afk/posx1 unset
+        var afk/posy1 unset
+        var afk/posz1 unset
+        var afk/posx2 unset
+        var afk/posy2 unset
+        var afk/posz2 unset
+        var afk unset
+    }
+    if (var afk = 2 0) {
+    } else {
+        exit
+    }
+    if (placeholder %player.pos.x% <= %var.player/afk/posx1%, placeholder %player.pos.x% >= %var.player/afk/posx2%, placeholder %player.pos.y% >= %var.player/afk/posy1%, placeholder %player.pos.y% <= %var.player/afk/posy2%, placeholder %player.pos.z% >= %var.player/afk/posz1%, placeholder %player.pos.z% <= %var.player/afk/posz2%) {
+    } else {
+        sound "Anvil Land" 0.7 1.0 "Invokers Location"
+        chat "&7[&c!&7] &c&lERROR! &cYou've moved away from the enemy, so your AFK status has been canceled!"
+        var afk unset
+        exit
+    }
+    function "Attacking" 

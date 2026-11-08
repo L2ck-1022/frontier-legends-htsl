@@ -1,0 +1,280 @@
+goto function "Global Loop"
+    globalvar eventct_t -= 5.0
+    if (globalvar eventct_t <= 0.0) {
+        globalvar eventct_t = 36000.0
+        globalvar eventid = %random.int/1 6%
+    } else {
+        exit
+    }
+    if (globalvar eventid = 1) {
+        globalvar announce = 3
+        function "Announce" true
+    }
+    if (globalvar eventid = 2) {
+        globalvar announce = 5
+        function "Announce" true
+    }
+    if (globalvar eventid = 3) {
+        globalvar announce = 7
+        globalvar ahtime = 120
+        function "Auction Item"
+        function "Announce" true
+    }
+    if (globalvar eventid = 4) {
+        globalvar announce = 11
+        function "Announce" true
+    }
+
+goto function "Stats"
+    if (globalvar eventid = 1 0) {
+        var mobxpmulti += 50
+    }
+    if (globalvar eventid = 2 0) {
+        var woodmfmulti += 50
+        var minemfmulti += 50
+    }
+
+goto function "Event End"
+    if (globalvar eventid = 1 0, globalvar eventct_t <= 24000.0 0) {
+        globalvar eventid unset
+        globalvar announce = 4
+        function "Announce" true
+    } 
+    if (globalvar eventid = 2 0, globalvar eventct_t <= 24000.0 0) {
+        globalvar eventid unset
+        globalvar announce = 6
+        function "Announce" true
+    }
+
+goto function "Sidebar Line"
+    if (globalvar eventid = 1 0) {
+        globalvar eventtime_m = globalvar eventct_t
+        globalvar eventtime_m -= 24000.0
+        globalvar eventtime_m /= 1200.0
+        globalvar eventtime_m = %var.global/eventtime_m%L
+        globalvar eventtime_s = %var.global/eventtime_m%D
+        globalvar eventtime_s *= -1200.0
+        globalvar eventtime_s -= 24000.0
+        globalvar eventtime_s += globalvar eventct_t
+        globalvar eventtime_s /= 20.0
+        globalvar eventtime_s = %var.global/eventtime_s%L
+        var $1 = %var.global/eventtime_m%
+        var $2 = %var.global/eventtime_s%
+        var $3 = "&lEXP WIND &f(%var.player/$1%"
+        var $3 = "➸ &b❃ %var.player/$3%"
+        var sidebarline = "%var.player/$3%:%var.player/$2%)"
+    }
+    if (globalvar eventid = 2 0) {
+        globalvar eventtime_m = globalvar eventct_t
+        globalvar eventtime_m -= 24000.0
+        globalvar eventtime_m /= 1200.0
+        globalvar eventtime_m = %var.global/eventtime_m%L
+        globalvar eventtime_s = %var.global/eventtime_m%D
+        globalvar eventtime_s *= -1200.0
+        globalvar eventtime_s -= 24000.0
+        globalvar eventtime_s += globalvar eventct_t
+        globalvar eventtime_s /= 20.0
+        globalvar eventtime_s = %var.global/eventtime_s%L
+        var $1 = %var.global/eventtime_m%
+        var $2 = %var.global/eventtime_s%
+        var $3 = "&lFRENZY&f (%var.global/$1%"
+        var $3 = "➸ &a❃ %var.player/$3%"
+        var sidebarline = "%var.player/$3%:%var.player/$2%)"
+    }
+    if (globalvar eventid = 3 0) {
+        var $1 = %var.global/ahtime%
+        var $2 = "&lAUCTION &f( %var.player/$1%s )"
+        var sidebarline = "➸ &6❃ %var.player/$2%"
+    }
+    if (globalvar eventid = 4 0) {
+        globalvar eventtime_m = globalvar eventct_t
+        globalvar eventtime_m -= 30000.0
+        globalvar eventtime_m /= 1200.0
+        globalvar eventtime_m = %var.global/eventtime_m%L
+        globalvar eventtime_s = %var.global/eventtime_m%D
+        globalvar eventtime_s *= -1200.0
+        globalvar eventtime_s -= 30000.0
+        globalvar eventtime_s += globalvar eventct_t
+        globalvar eventtime_s /= 20.0
+        globalvar eventtime_s = %var.global/eventtime_s%L
+        var $1 = %var.global/eventtime_m%
+        var $2 = %var.global/eventtime_s%
+        var $3 = "&lPARKOUR &f(%var.player/$1%"
+        var $3 = "➸ &d❃ %var.player/$3%"
+        var sidebarline = "%var.player/$3%:%var.player/$2%)"
+    }
+goto function "Announce"
+    if (globalvar announce = 3) {
+        chat "&b❃ &lEXP WIND! &7It gives you &b+50% ✧ Exp&7! &a(10:00)"
+        sound "Ambience Rain" 1.0 0.1 "Invokers Location"
+        sound "Bat Loop" 1.0 0.8 "Invokers Location"
+    }
+    if (globalvar announce = 4) {
+        chat "&8❃ &lEXP WIND ENDED! &7The exp boost has expired!"
+    }
+    if (globalvar announce = 5) {
+        chat "&a❃ &lGATHERING FRENZY!&7 &dx1.5&7 chance to get rare items from gathering! &a(10:00)"
+    }
+    if (globalvar announce = 6) {
+        chat "&8❃ &lGATHERING FRENZY ENDED!&7 Put your tool down and take a break!"
+    }
+
+goto function "Stat Fix"
+    if (globalvar eventct_t = -1 -1) {
+        globalvar eventct_t = 36000.0
+    }
+
+goto function "Announce"
+    if (globalvar announce = 7) {
+        chat "&6❃ &lAUCTION! &7A &ospecial &7item has been offered on auction!"
+        chat "&6➲ &7Offer: %var.global/ahitem% &7Starts at: &e⛃100"
+        chat "&6➲ &7The auction lasts in &a120s&7! &e/bid&7 to bid"
+    }
+    if (globalvar announce = 8) {
+        chat "&6➲ &a%var.global/bidder% &7placed a bid of &e%var.global/ahp1%⛃ &7on %var.global/ahitem%&7! ( &a+10s &7)"
+    }
+    if (globalvar announce = 9) {
+        chat "&6➲ &a%var.global/bidder% &7placed a bid of &e%var.global/ahp1%⛃ &7on %var.global/ahitem%&7!"
+    }
+    if (globalvar announce = 10) {
+        chat "&8❃ &lAUCTION ENDED! &cNo one&7 has won %var.global/ahitem%&7!"
+    }
+    if (globalvar announce = 10) {
+        chat "&8❃ &lAUCTION ENDED! &a%var.global/bidder%&7 has won %var.global/ahitem%&7 for &e⛃%var.global/ahpnow%&7!"
+    }   
+goto function "Auction Item"
+    random {
+        globalvar ahitem = "&5test"
+    }
+goto function "Auction Win"
+    if (placeholder %player.name% = globalvar bidder) {
+        chat "&7[&6!&7] &aYou got %var.global/ahitem%&a!"
+    } else {
+        exit
+    }
+    if (globalvar ahitem = &5test) {
+        giveItem slot_1 true
+    }
+goto gui "Bid Auction" 21
+    if (globalvar ahtime <= 20) {
+        globalvar announce = 8
+        globalvar ahtime += 10
+    } else {
+        globalvar announce = 9
+    }
+    function "Announce" true
+    pause 5
+    globalvar bidding unset
+goto gui "Bid Auction" 22
+    if (globalvar ahtime <= 20) {
+        globalvar announce = 8
+        globalvar ahtime += 10
+    } else {
+        globalvar announce = 9
+    }
+    function "Announce" true
+    pause 5
+    globalvar bidding unset
+goto gui "Bid Auction" 23
+    if (globalvar ahtime <= 20) {
+        globalvar announce = 8
+        globalvar ahtime += 10
+    } else {
+        globalvar announce = 9
+    }
+    function "Announce" 
+    pause 5
+    globalvar bidding unset
+
+goto function "Second Loop"
+    if (globalvar eventid = 3 0) {
+        globalvar ahtime -= 1
+    }
+goto function "Event End"
+    if (globalvar eventid = 3 0, globalvar ahtime <= 0) {
+        globalvar announce = 10
+        function "Announce" true
+        function "Auction Win" true
+        pause 2
+        globalvar eventid unset
+        globalvar ahtime unset
+        globalvar ahitem unset
+        globalvar bidder unset
+        globalvar ahp unset
+        globalvar ahp2 unset
+        globalvar ahp3 unset
+        globalvar ahbids unset
+        globalvar ahpnow unset
+    }
+goto function "Event End"
+    if (globalvar eventid = 4 0, globalvar eventct_t <= 30000.0, inRegion "Parkour") {
+        tp "custom_coordinates" "%var.player/epos_x% %var.player/epos_y% %var.player/epos_z% %var.player/epos_z% %var.player/epos_yaw% %var.player/epos_pitch%"
+    }
+    if (globalvar eventid = 4 0, globalvar eventct_t <= 30000.0) {
+        globalvar eventid unset
+        globalvar announce = 13
+        function "Announce" true
+        pause 5
+        globalvar eventrank unset
+        globalvar eventtime unset
+        globalvar winner unset
+    }
+goto command "event"
+    if (globalvar eventid = 4 0) {
+        var epos_x = %player.pos.x%
+        var epos_y = %player.pos.y%
+        var epos_z = %player.pos.z%
+        var epos_yaw = %player.pos.yaw%
+        var epos_pitch = %player.pos.pitch%
+        tp "custom_coordinates" "117.5 3 136.5 180 20"
+        exit
+    }
+    chat "&7[&c!&7] &c&lERROR! &cEvent isnt ongoing right now!"
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+goto function "Event tpback"
+    if (globalvar eventid = 4 0, inRegion "Parkour") {
+        tp "custom_coordinates" "%var.player/epos_x% %var.player/epos_y% %var.player/epos_z% %var.player/epos_z% %var.player/epos_yaw% %var.player/epos_pitch%"
+    }
+    if (globalvar eventid = 4 0, inRegion "Parkour Goal") {
+        tp "custom_coordinates" "%var.player/epos_x% %var.player/epos_y% %var.player/epos_z% %var.player/epos_z% %var.player/epos_yaw% %var.player/epos_pitch%"
+    }
+goto region "Parkour Goal" "Entry Actions"
+    globalvar eventrank += 1
+if (globalvar eventrank >= 3 0) {
+        globalvar announce = 13
+        globalvar winner = %player.name%
+        globalvar eventtime = 36000.0
+        globalvar eventtime -= globalvar eventct_t
+        globalvar eventtime /= 20.0
+        function "Announce" true
+        function "Event tpback" true
+        pause 5
+        globalvar eventid unset
+        globalvar winner unset
+        globalvar eventrank unset
+        globalvar eventtime unset
+        exit
+    }
+    if (globalvar eventrank <= 2 0) {
+        globalvar winner = %player.name%
+        globalvar announce = 12
+        globalvar eventtime = 36000.0
+        globalvar eventtime -= globalvar eventct_t
+        globalvar eventtime /= 20.0
+        function "Announce" true
+    }
+goto function "Announce"
+    if (globalvar announce = 11) {
+        chat ""
+    }
+    if (globalvar announce = 12) {
+        chat ""
+    }
+    if (globalvar announce = 13) {
+        chat ""
+        var epos_x unset
+        var epos_y unset
+        var epos_z unset
+        var epos_yaw unset
+        var epos_pitch unset
+    }

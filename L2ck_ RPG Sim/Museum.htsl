@@ -1,0 +1,421 @@
+// ============================================================
+//  MUSEUM SYSTEM - Hypixel Housing HTSL  v12.0
+// ============================================================
+//
+//  [Variables]
+//    Persistent:
+//      museum_data   : long  - bitmask for all stored items
+//      museum_points : long  - total Museum Points
+//
+//    Temporary (used only in museum_display, unset after pause 5):
+//      museum_c[N]   : color code ("2"=dark green / "4"=dark red)
+//      _mask         : working variable for AND operations
+//
+//  [Museum Points by rarity]
+//    Common=1  Uncommon=2  Rare=4  Epic=7  Legendary=12
+//
+//  [slot_N]
+//    Inventory slot index starting at 1 (top-left = 1).
+//
+//  [GUI item name format]
+//    &%var.player/museum_c[N]%[ItemName]
+//
+//  [Action limits]
+//    Max 20 var/if actions per function.
+//    museum_display splits into museum_disp_1, museum_disp_2...
+//    if item count exceeds 5 per chunk.
+//
+//  [Function definition order]
+//    All sub-functions must be defined (goto function) BEFORE
+//    they are called with function "name" false.
+//    Order: museum_disp_N (last to first) → museum_display → slots
+//
+// ============================================================
+
+
+// ------------------------------------------------------------
+// [Function] museum_init
+// ------------------------------------------------------------
+goto function "museum_init"
+
+var museum_data set 0
+var museum_points set 0
+chat "&7[&a!&7] &fMuseum initialized."
+
+
+// ------------------------------------------------------------
+// [Event] Player Join - run museum_init if not yet initialized
+// ------------------------------------------------------------
+goto event "Player Join"
+
+if (var museum_data < 0 -1) {
+    function "museum_init" false
+}
+
+
+// ------------------------------------------------------------
+// [Command] /museum
+// NOTE: museum_display must be defined before this call.
+//       Paste all generated code (COLOR VARS tab) above this
+//       command section.
+// ------------------------------------------------------------
+
+// == PASTE COLOR VARS / FUNCTION DEFINITIONS HERE ==
+// (paste generated COLOR VARS code here - includes goto function blocks)
+    goto function "museum_display"
+
+var _mask set var museum_data
+var _mask &= 128
+if (var _mask >= 1 0) {
+    var museum_c7 set "2"
+} else {
+    var museum_c7 set "4"
+}
+
+var _mask set var museum_data
+var _mask &= 256
+if (var _mask >= 1 0) {
+    var museum_c8 set "2"
+} else {
+    var museum_c8 set "4"
+}
+
+var _mask set var museum_data
+var _mask &= 512
+if (var _mask >= 1 0) {
+    var museum_c9 set "2"
+} else {
+    var museum_c9 set "4"
+}
+goto function "museum_display_2"
+var _mask set var museum_data
+var _mask &= 1024
+if (var _mask >= 1 0) {
+    var museum_c10 set "2"
+} else {
+    var museum_c10 set "4"
+}
+
+var _mask set var museum_data
+var _mask &= 2048
+if (var _mask >= 1 0) {
+    var museum_c11 set "2"
+} else {
+    var museum_c11 set "4"
+}
+
+var _mask set var museum_data
+var _mask &= 4096
+if (var _mask >= 1 0) {
+    var museum_c12 set "2"
+} else {
+    var museum_c12 set "4"
+}
+
+var _mask set var museum_data
+var _mask &= 8192
+if (var _mask >= 1 0) {
+    var museum_c13 set "2"
+} else {
+    var museum_c13 set "4"
+}
+
+displayMenu "Museum"
+
+pause 5
+
+if () {
+    var _mask unset
+    var museum_c7 unset
+    var museum_c8 unset
+    var museum_c9 unset
+    var museum_c10 unset
+    var museum_c11 unset
+    var museum_c12 unset
+    var museum_c13 unset
+}
+goto function "museum_display"
+    function "museum_display_2"
+// == END ==
+
+goto command "museum"
+
+function "museum_display" false
+
+
+// ============================================================
+//  GUI Slot Actions
+//  (paste generated SLOT ACTIONS code below)   
+//  museum_display is already defined above, so calling it here is safe.
+// ============================================================
+
+// == SLOT ACTIONS START ==
+// (paste generated SLOT ACTIONS code here)
+// ------------------------------------------------------------
+// Slot 19 = Dune Wanderer Armor  (bit7 mask=128  Rare +4pt)
+// Pieces: helmet(slot_1), chest(slot_2), legs(slot_3), boots(slot_4)
+// ------------------------------------------------------------
+goto gui "Museum" "19"
+
+var _mask set var museum_data
+var _mask &= 128
+
+// Stored -> withdraw
+if (var _mask >= 1 0) {
+    var _mask unset
+    giveItem slot_1 true
+    giveItem slot_2 true
+    giveItem slot_3 true
+    giveItem slot_4 true
+    var museum_data ^= 128
+    var museum_points -= 4
+    sound "Click" 1 1 "invokers_location"
+    chat "&7[&a!&7] &9Dune Wanderer Armor &7has been &cwithdrown&7."
+    function "museum_display" false
+    exit
+}
+
+var _mask unset
+
+// Empty -> deposit
+if and (hasItem slot_1 Metadata Anywhere "Any Amount", hasItem slot_2 Metadata Anywhere "Any Amount", hasItem slot_3 Metadata Anywhere "Any Amount", hasItem slot_4 Metadata Anywhere "Any Amount") {
+    removeItem slot_1
+    removeItem slot_2
+    removeItem slot_3
+    removeItem slot_4
+    var museum_data |= 128
+    var museum_points += 4
+    sound "Orb Pickup" 1 1 "invokers_location"
+    chat "&7[&a!&7] &9Dune Wanderer Armor &7has been &adeposited&7! &e+4pt"
+    function "museum_display" false
+} else {
+    chat "&7[&a!&7] &7Missing pieces: &ehelmet, chest, legs, boots"
+}
+exit
+
+
+// ------------------------------------------------------------
+// Slot 20 = Pharaoh's Armor  (bit8 mask=256  Epic +7pt)
+// Pieces: helmet(slot_5), chest(slot_6), legs(slot_7)
+// ------------------------------------------------------------
+goto gui "Museum" "20"
+
+var _mask set var museum_data
+var _mask &= 256
+
+// Stored -> withdraw
+if (var _mask >= 1 0) {
+    var _mask unset
+    giveItem slot_5 true
+    giveItem slot_6 true
+    giveItem slot_7 true
+    var museum_data ^= 256
+    var museum_points -= 7
+    sound "Click" 1 1 "invokers_location"
+    chat "&7[&a!&7] &5Pharaoh's Armor &7has been &cwithdrown&7."
+    function "museum_display" false
+    exit
+}
+
+var _mask unset
+
+// Empty -> deposit
+if and (hasItem slot_5 Metadata Anywhere "Any Amount", hasItem slot_6 Metadata Anywhere "Any Amount", hasItem slot_7 Metadata Anywhere "Any Amount") {
+    removeItem slot_5
+    removeItem slot_6
+    removeItem slot_7
+    var museum_data |= 256
+    var museum_points += 7
+    sound "Orb Pickup" 1 1 "invokers_location"
+    chat "&7[&a!&7] &5Pharaoh's Armor &7has been &adeposited&7! &e+7pt"
+    function "museum_display" false
+} else {
+    chat "&7[&a!&7] &7Missing pieces: &ehelmet, chest, legs"
+}
+exit
+
+
+// ------------------------------------------------------------
+// Slot 21 = Desert Nomad's Veil  (bit9 mask=512  Epic +7pt)
+// Pieces: helmet(slot_8)
+// ------------------------------------------------------------
+goto gui "Museum" "21"
+
+var _mask set var museum_data
+var _mask &= 512
+
+// Stored -> withdraw
+if (var _mask >= 1 0) {
+    var _mask unset
+    giveItem slot_8 true
+    var museum_data ^= 512
+    var museum_points -= 7
+    sound "Click" 1 1 "invokers_location"
+    chat "&7[&a!&7] &5Desert Nomad's Veil &7has been &cwithdrown&7."
+    function "museum_display" false
+    exit
+}
+
+var _mask unset
+
+// Empty -> deposit
+if (hasItem slot_8 Metadata Anywhere "Any Amount") {
+    removeItem slot_8
+    var museum_data |= 512
+    var museum_points += 7
+    sound "Orb Pickup" 1 1 "invokers_location"
+    chat "&7[&a!&7] &5Desert Nomad's Veil &7has been &adeposited&7! &e+7pt"
+    function "museum_display" false
+} else {
+    chat "&7[&a!&7] &7Missing pieces: &ehelmet"
+}
+exit
+
+
+// ------------------------------------------------------------
+// Slot 22 = Thorned Boots  (bit10 mask=1024  Rare +4pt)
+// Pieces: boots(slot_9)
+// ------------------------------------------------------------
+goto gui "Museum" "22"
+
+var _mask set var museum_data
+var _mask &= 1024
+
+// Stored -> withdraw
+if (var _mask >= 1 0) {
+    var _mask unset
+    giveItem slot_9 true
+    var museum_data ^= 1024
+    var museum_points -= 4
+    sound "Click" 1 1 "invokers_location"
+    chat "&7[&a!&7] &9Thorned Boots &7has been &cwithdrown&7."
+    function "museum_display" false
+    exit
+}
+
+var _mask unset
+
+// Empty -> deposit
+if (hasItem slot_9 Metadata Anywhere "Any Amount") {
+    removeItem slot_9
+    var museum_data |= 1024
+    var museum_points += 4
+    sound "Orb Pickup" 1 1 "invokers_location"
+    chat "&7[&a!&7] &9Thorned Boots &7has been &adeposited&7! &e+4pt"
+    function "museum_display" false
+} else {
+    chat "&7[&a!&7] &7Missing pieces: &eboots"
+}
+exit
+
+
+// ------------------------------------------------------------
+// Slot 23 = Poisoned Dagger  (bit11 mask=2048  Uncommon +2pt)
+// Pieces: weapon(slot_10)
+// ------------------------------------------------------------
+goto gui "Museum" "23"
+
+var _mask set var museum_data
+var _mask &= 2048
+
+// Stored -> withdraw
+if (var _mask >= 1 0) {
+    var _mask unset
+    giveItem slot_10 true
+    var museum_data ^= 2048
+    var museum_points -= 2
+    sound "Click" 1 1 "invokers_location"
+    chat "&7[&a!&7] &aPoisoned Dagger &7has been &cwithdrown&7."
+    function "museum_display" false
+    exit
+}
+
+var _mask unset
+
+// Empty -> deposit
+if (hasItem slot_10 Metadata Anywhere "Any Amount") {
+    removeItem slot_10
+    var museum_data |= 2048
+    var museum_points += 2
+    sound "Orb Pickup" 1 1 "invokers_location"
+    chat "&7[&a!&7] &aPoisoned Dagger &7has been &adeposited&7! &e+2pt"
+    function "museum_display" false
+} else {
+    chat "&7[&a!&7] &7Poisoned Dagger is not in your inventory."
+}
+exit
+
+
+// ------------------------------------------------------------
+// Slot 24 = Desert Spear  (bit12 mask=4096  Rare +4pt)
+// Pieces: weapon(slot_11)
+// ------------------------------------------------------------
+goto gui "Museum" "24"
+
+var _mask set var museum_data
+var _mask &= 4096
+
+// Stored -> withdraw
+if (var _mask >= 1 0) {
+    var _mask unset
+    giveItem slot_11 true
+    var museum_data ^= 4096
+    var museum_points -= 4
+    sound "Click" 1 1 "invokers_location"
+    chat "&7[&a!&7] &9Desert Spear &7has been &cwithdrown&7."
+    function "museum_display" false
+    exit
+}
+
+var _mask unset
+
+// Empty -> deposit
+if (hasItem slot_11 Metadata Anywhere "Any Amount") {
+    removeItem slot_11
+    var museum_data |= 4096
+    var museum_points += 4
+    sound "Orb Pickup" 1 1 "invokers_location"
+    chat "&7[&a!&7] &9Desert Spear &7has been &adeposited&7! &e+4pt"
+    function "museum_display" false
+} else {
+    chat "&7[&a!&7] &7Desert Spear is not in your inventory."
+}
+exit
+
+
+// ------------------------------------------------------------
+// Slot 25 = Cactus Flail  (bit13 mask=8192  Rare +4pt)
+// Pieces: weapon(slot_12)
+// ------------------------------------------------------------
+goto gui "Museum" "25"
+
+var _mask set var museum_data
+var _mask &= 8192
+
+// Stored -> withdraw
+if (var _mask >= 1 0) {
+    var _mask unset
+    giveItem slot_12 true
+    var museum_data ^= 8192
+    var museum_points -= 4
+    sound "Click" 1 1 "invokers_location"
+    chat "&7[&a!&7] &9Cactus Flail &7has been &cwithdrown&7."
+    function "museum_display" false
+    exit
+}
+
+var _mask unset
+
+// Empty -> deposit
+if (hasItem slot_12 Metadata Anywhere "Any Amount") {
+    removeItem slot_12
+    var museum_data |= 8192
+    var museum_points += 4
+    sound "Orb Pickup" 1 1 "invokers_location"
+    chat "&7[&a!&7] &9Cactus Flail &7has been &adeposited&7! &e+4pt"
+    function "museum_display" false
+} else {
+    chat "&7[&a!&7] &7Cactus Flail is not in your inventory."
+}
+exit
+// == SLOT ACTIONS END ==

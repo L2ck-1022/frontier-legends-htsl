@@ -1,0 +1,816 @@
+if (var rsefflv = 0 0) {
+    var rsefflv = 0
+}
+if (var rsminemflv = 0 0) {
+    var rsminemflv = 0
+}
+if (var rshplv = 0 0) {
+    var rshplv = 0
+}
+if (var rseffcost = 0 0, var rsefflv = 0 0) {
+    var rseffcost = "&fRaw Redstone &7x1"
+}
+if (var rsminemfcost = 0 0, var rsminemflv = 0 0) {
+    var rsminemfcost = "&fRaw Redstone &7x1"
+}
+if (var rshpcost = 0 0, var rshplv = 0 0) {
+    var rshpcost = "&fRaw Redstone &7x1"
+}
+if (inRegion "Redstone Upgrade") {
+    var rseff = var rsefflv
+    var rsminemf = var rsminemflv
+    var rshp = var rshplv
+    var rseff *= 2
+    var rsminemf *= 2
+    var rshp *= 2
+    var rseff' = var rseff
+    var rsminemf' = var rsminemf
+    var rshp' = var rshp
+    var rseff' += 2
+    var rsminemf' += 2
+    var rshp' += 2
+}
+if (var rsefflv >= 20) {
+    var rseff' unset
+}
+if (var rsminemflv >= 20) {
+    var rsminemf' unset
+}
+if (var rshplv >= 10) {
+    var rshp' unset
+}
+
+
+goto gui "Redstone Perks" 11
+if (var rseff >= 20) {
+    chat "&7[&c!&7] &c&lERROR! &cYou already maxed this upgrade!"
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    exit
+}
+if (var rsefflv = 19, hasItem slot_20 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_20 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost unset
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 18, hasItem slot_19 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_19 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&9Redstone Ingot &7x64"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 17, hasItem slot_18 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_18 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&9Redstone Ingot &7x48"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 16, hasItem slot_17 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_17 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&9Redstone Ingot &7x36"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 15, hasItem slot_16 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_16 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&9Redstone Ingot &7x28"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 14, hasItem slot_15 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_15 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&9Redstone Ingot &7x20"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 13, hasItem slot_14 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_14 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&9Redstone Ingot &7x16"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 12, hasItem slot_13 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_13 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&9Redstone Ingot &7x12"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 11, hasItem slot_12 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_12 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&9Redstone Ingot &7x8"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 10, hasItem slot_11 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_11 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&9Redstone Ingot &7x6"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 9, hasItem slot_10 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_10 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&9Redstone Ingot &7x4"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 8, hasItem slot_9 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_9 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&fRaw Redstone &7x64"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 7, hasItem slot_8 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_8 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&fRaw Redstone &7x48"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 6, hasItem slot_7 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_7 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&fRaw Redstone &7x32"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 5, hasItem slot_6 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_6 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&fRaw Redstone &7x24"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 4, hasItem slot_5 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_5 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&fRaw Redstone &7x16"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 3, hasItem slot_4 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_4 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&fRaw Redstone &7x8"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 2, hasItem slot_3 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_3 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&fRaw Redstone &7x5"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 1, hasItem slot_2 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_2 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&fRaw Redstone &7x3"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+if (var rsefflv = 0, hasItem slot_1 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_1 true
+    var rsefflv += 1
+    var rseff = var rsefflv
+    var rseff *= 2
+    var rseff' = var rseff
+    var rseff' += 2
+    var rseffcost = "&fRaw Redstone &7x2"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rseff unset
+    var rseff' unset
+    exit
+}
+
+
+goto gui "Redstone Perks" 13
+if (var rsminemf >= 20) {
+    chat "&7[&c!&7] &c&lERROR! &cYou already maxed this upgrade!"
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    exit
+}
+if (var rsminemflv = 19, hasItem slot_20 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_20 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost unset
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 18, hasItem slot_19 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_19 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&9Redstone Ingot &7x64"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 17, hasItem slot_18 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_18 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&9Redstone Ingot &7x48"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 16, hasItem slot_17 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_17 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&9Redstone Ingot &7x36"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 15, hasItem slot_16 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_16 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&9Redstone Ingot &7x28"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 14, hasItem slot_15 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_15 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&9Redstone Ingot &7x20"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 13, hasItem slot_14 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_14 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&9Redstone Ingot &7x16"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 12, hasItem slot_13 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_13 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&9Redstone Ingot &7x12"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 11, hasItem slot_12 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_12 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&9Redstone Ingot &7x8"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 10, hasItem slot_11 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_11 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&9Redstone Ingot &7x6"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 9, hasItem slot_10 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_10 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&9Redstone Ingot &7x4"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 8, hasItem slot_9 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_9 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&fRaw Redstone &7x64"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 7, hasItem slot_8 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_8 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&fRaw Redstone &7x48"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 6, hasItem slot_7 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_7 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&fRaw Redstone &7x32"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 5, hasItem slot_6 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_6 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&fRaw Redstone &7x24"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 4, hasItem slot_5 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_5 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&fRaw Redstone &7x16"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 3, hasItem slot_4 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_4 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&fRaw Redstone &7x8"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 2, hasItem slot_3 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_3 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&fRaw Redstone &7x5"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 1, hasItem slot_2 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_2 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&fRaw Redstone &7x3"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+if (var rsminemflv = 0, hasItem slot_1 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_1 true
+    var rsminemflv += 1
+    var rsminemf = var rsminemflv
+    var rsminemf *= 2
+    var rsminemf' = var rsminemf
+    var rsminemf' += 2
+    var rsminemfcost = "&fRaw Redstone &7x2"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rsminemf unset
+    var rsminemf' unset
+    exit
+}
+
+
+
+goto gui "Redstone Perks" 15
+if (var rshplv >= 10) {
+    chat "&7[&c!&7] &c&lERROR! &cYou already maxed this upgrade!"
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    exit
+}
+if (var rshplv = 9, hasItem slot_20 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_20 true
+    var rshplv += 1
+    var rshp = var rshplv
+    var rshp *= 2
+    var rshp' = var rshp
+    var rshp' += 2
+    var rshpcost unset
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rshp unset
+    var rshp' unset
+    exit
+}
+if (var rshplv = 8, hasItem slot_19 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_19 true
+    var rshplv += 1
+    var rshp = var rshplv
+    var rshp *= 2
+    var rshp' = var rshp
+    var rshp' += 2
+    var rshpcost = "&9Redstone Ingot &7x64"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rshp unset
+    var rshp' unset
+    exit
+}
+if (var rshplv = 7, hasItem slot_18 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_18 true
+    var rshplv += 1
+    var rshp = var rshplv
+    var rshp *= 2
+    var rshp' = var rshp
+    var rshp' += 2
+    var rshpcost = "&9Redstone Ingot &7x48"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rshp unset
+    var rshp' unset
+    exit
+}
+if (var rshplv = 6, hasItem slot_17 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_17 true
+    var rshplv += 1
+    var rshp = var rshplv
+    var rshp *= 2
+    var rshp' = var rshp
+    var rshp' += 2
+    var rshpcost = "&9Redstone Ingot &7x32"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rshp unset
+    var rshp' unset
+    exit
+}
+if (var rshplv = 5, hasItem slot_16 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_16 true
+    var rshplv += 1
+    var rshp = var rshplv
+    var rshp *= 2
+    var rshp' = var rshp
+    var rshp' += 2
+    var rshpcost = "&9Redstone Ingot &7x24"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rshp unset
+    var rshp' unset
+    exit
+}
+if (var rshplv = 4, hasItem slot_15 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_15 true
+    var rshplv += 1
+    var rshp = var rshplv
+    var rshp *= 2
+    var rshp' = var rshp
+    var rshp' += 2
+    var rshpcost = "&9Redstone Ingot &7x16"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rshp unset
+    var rshp' unset
+    exit
+}
+if (var rshplv = 3, hasItem slot_14 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_14 true
+    var rshplv += 1
+    var rshp = var rshplv
+    var rshp *= 2
+    var rshp' = var rshp
+    var rshp' += 2
+    var rshpcost = "&9Redstone Ingot &7x12"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rshp unset
+    var rshp' unset
+    exit
+}
+if (var rshplv = 2, hasItem slot_13 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_13 true
+    var rshplv += 1
+    var rshp = var rshplv
+    var rshp *= 2
+    var rshp' = var rshp
+    var rshp' += 2
+    var rshpcost = "&9Redstone Ingot &7x8"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rshp unset
+    var rshp' unset
+    exit
+}
+if (var rshplv = 1, hasItem slot_12 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_12 true
+    var rshplv += 1
+    var rshp = var rshplv
+    var rshp *= 2
+    var rshp' = var rshp
+    var rshp' += 2
+    var rshpcost = "&9Redstone Ingot &7x4"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rshp unset
+    var rshp' unset
+    exit
+}
+if (var rshplv = 0, hasItem slot_11 Metadata Anywhere "Equal or Greater Amount") { 
+    removeItem slot_11 true
+    var rshplv += 1
+    var rshp = var rshplv
+    var rshp *= 2
+    var rshp' = var rshp
+    var rshp' += 2
+    var rshpcost = "&9Redstone Ingot &7x2"
+    sound "Note Pling" 0.7 1.0 "Invokers Location"
+    displayMenu "Redstone Perks"
+    pause 5
+    var rshp unset
+    var rshp' unset
+    exit
+}

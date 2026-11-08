@@ -1,0 +1,158 @@
+goto function "Main Menu"
+    if (var drewardtime_t <= 0) {
+        var drewardtime_t = 0
+        var dreward = 2
+    } else {
+        var dreward = 4
+    }
+    if () {
+        globalvar uptime_s = %var.global/uptime_t%
+        globalvar uptime_s /= 20
+        globalvar uptime_m = %var.global/uptime_s%
+        globalvar uptime_m /= 60
+        globalvar timevar = %var.global/uptime_m%
+        globalvar timevar *= 60
+        globalvar uptime_s -= %var.global/timevar%
+        globalvar uptime_h = %var.global/uptime_m%
+        globalvar uptime_h /= 60
+        globalvar timevar = %var.global/uptime_h%
+        globalvar timevar *= 60
+        globalvar uptime_m -= %var.global/timevar%
+        globalvar uptime_d = %var.global/uptime_h%
+        globalvar uptime_d /= 24
+        globalvar timevar = %var.global/uptime_d%
+        globalvar timevar *= 24
+        globalvar uptime_h -= %var.global/timevar%
+    }
+    if () {
+        var pt_s = %var.player/pt_t%
+        var pt_s /= 20
+        var pt_m = %var.player/pt_s%
+        var pt_m /= 60
+        var timevar = %var.player/pt_m%
+        var timevar *= 60
+        var pt_s -= %var.player/timevar%
+        var pt_h = %var.player/pt_m%
+        var pt_h /= 60
+        var timevar = %var.player/pt_h%
+        var timevar *= 60
+        var pt_m -= %var.player/timevar%
+        var pt_d = %var.player/pt_h%
+        var pt_d /= 24
+        var timevar = %var.player/pt_d%
+        var timevar *= 24
+        var pt_h -= %var.player/timevar%
+    }
+    if () {
+        var drewardtime_s = %var.player/drewardtime_t%
+        var drewardtime_s /= 20
+        var drewardtime_m = %var.player/drewardtime_s%
+        var drewardtime_m /= 60
+        var timevar = %var.player/drewardtime_m%
+        var timevar *= 60
+        var drewardtime_s -= %var.player/timevar%
+        var drewardtime_h = %var.player/drewardtime_m%
+        var drewardtime_h /= 60
+        var timevar = %var.player/drewardtime_h%
+        var timevar *= 60
+        var drewardtime_m -= %var.player/timevar%
+        var drewardtime_d = %var.player/drewardtime_h%
+        var drewardtime_d /= 24
+        var timevar = %var.player/drewardtime_d%
+        var timevar *= 24
+        var drewardtime_h -= %var.player/timevar%
+    }
+    displayMenu "Main Menu"
+    if () {
+        globalvar uptime_s unset
+        globalvar uptime_m unset
+        globalvar uptime_h unset
+        globalvar uptime_d unset
+        var pt_s unset
+        var pt_m unset
+        var pt_h unset
+        var pt_d unset
+        var drewardtime_s unset
+        var drewardtime_m unset
+        var drewardtime_h unset
+        globalvar timevar unset
+        var timevar unset
+    }
+
+//Daily Reward 
+if (var drewardtime_t <= 0) {
+    var drewardtime_t = 1512000
+    chat "&7[&a!&7] Claimed Your &aDaily Reward"
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    var drewardxpvar = %var.player/reqxp%
+    var drewardxpvar *= 3
+    var drewardxpvar /= 10
+    var drewardgoldvar = %var.player/pt_t% 
+    var drewardgoldvar *= %var.player/level%
+    var drewardgoldvar *= %random.int/1 2001%
+    var drewardgoldvar /= 20000
+    chat "&a &7+ &b%var.player/drewardxpvar%"
+    chat "&a &7+ &6%var.player/drewardgoldvar%"
+    chat "&a &7+ &a5"
+    var xp += %var.player/drewardxpvar%
+    var gold += %var.player/drewardgoldvar%
+    var gem += 5
+    var drewardxpvar unset
+    var drewardgoldvar unset
+} else {
+    chat "&7[&c!&7] &cYou cannot claim this yet!"
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+}
+
+//Accessories Bag
+function "Accessories Formula 1"
+displayMenu "Accessories Bag Page 1"
+var sound = 4
+function "Sounds"
+
+//Fast Travel
+displayMenu "Fast Travel"
+var sound = 5
+function "Sounds"
+
+//Fast Travel Menu (Merchant)
+    var pos_x = %player.pos.x%
+    var pos_y = %player.pos.y%
+    var pos_z = %player.pos.z%
+    var pos_pitch = %player.pos.pitch%
+    var pos_yaw = %player.pos.yaw%
+    tp "Custom Coordinates" "74.5 103 -66.3 180 12" 
+    chat "&7[&a!&7] Successfully teleported!"
+    var sound = 6
+    function "Sounds"
+//Fast Travel Menu (Blacksmith)
+    var pos_x = %player.pos.x%
+    var pos_y = %player.pos.y%
+    var pos_z = %player.pos.z%
+    var pos_pitch = %player.pos.pitch%
+    var pos_yaw = %player.pos.yaw%
+    tp "Custom Coordinates" "71.5 103 -90.5 11.5 20" 
+    chat "&7[&a!&7] Successfully teleported!"
+    var sound = 6
+    function "Sounds"
+
+//Back 
+goto command "/tpback"
+    tp "Custom Coordinates" "%var.player/pos_x% %var.player/pos_y% %var.player/pos_z% %var.player/pos_yaw% %var.player/pos_pitch%"
+    chat "&7[&a!&7] Successfully teleported!"
+    var sound = 6
+    function "Sounds"
+
+//Next Page
+if (var level >= 12) {
+    displayMenu "Desert Shop"
+    sound "Door Open" 0.7 0.1 "Invokers Location"
+    sound "Chest Open" 0.7 0.3 "Invokers Location"
+} else {
+    chat "&7[&c!&7] &cYou don't have enough level!"
+    sound "Anvil Land"
+}
+//Previous Page
+displayMenu "Forest Shop"
+sound "Door Open" 0.7 0.1 "Invokers Location"
+sound "Chest Open" 0.7 0.3 "Invokers Location"
