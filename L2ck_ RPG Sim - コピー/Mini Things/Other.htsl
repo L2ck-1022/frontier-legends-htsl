@@ -1,0 +1,48 @@
+var spawnpoint = 2
+var sound = 5
+function "Sounds"
+
+goto function "Spawnpoint"
+    if (var spawnpoint = 0 0) {
+        tp "custom_coordinates" "61.5 103 -67.5 42.5 10" true
+    }
+    if (var spawnpoint = 1 0) {
+        tp "custom_coordinates" "10.5 107 -91 114 20" true
+    }
+    if (var spawnpoint = 2 0) {
+        tp "custom_coordinates" "-1.5 118 -64.5 11 20" true
+    }
+
+goto gui "Forest Shop" 4
+if (var gold >= 20) {
+    var gold -= 20
+    giveItem slot_28 true
+    var sound = 2
+    function "Sounds"
+    chat "&7[&a!&7] &aSuccessfully purchased the item!"
+} else {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&c✗ Not met the Requirements!"
+}
+goto gui "Desert Shop" 4
+if (var gold >= 500) {
+    var gold -= 500
+    giveItem slot_29 true
+    var sound = 2
+    function "Sounds"
+    chat "&7[&a!&7] &aSuccessfully purchased the item!"
+} else {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&c✗ Not met the Requirements!"
+}
+goto gui "Badlands" Shop" 4
+if (var gold >= 2000) {
+    var gold -= 2000
+    giveItem slot_30 true
+    var sound = 2
+    function "Sounds"
+    chat "&7[&a!&7] &aSuccessfully purchased the item!"
+} else {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&c✗ Not met the Requirements!"
+}

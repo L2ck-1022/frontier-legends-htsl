@@ -1,0 +1,625 @@
+goto function "Quest Formula 1"
+    if () {
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 2
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q1 = %var.player/qformulavar1%
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 2
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 4
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q2 = %var.player/qformulavar1%
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 4
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 8
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q3 = %var.player/qformulavar1%
+    }
+    if () {
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 8
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 16
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q4 = %var.player/qformulavar1%
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 16
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 32
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q5 = %var.player/qformulavar1%
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 32
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 64
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q6 = %var.player/qformulavar1%
+    }
+    if () {
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 64
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 128
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q7 = %var.player/qformulavar1%
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 128
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 256
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q8 = %var.player/qformulavar1%
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 256
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 512
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q9 = %var.player/qformulavar1%
+    }
+    if () {
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 512
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 1024
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q10 = %var.player/qformulavar1%
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 1024
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 2048
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q11 = %var.player/qformulavar1%
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 2048
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 4096
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q12 = %var.player/qformulavar1%
+    }
+    if () {
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 4096
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 8192
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q13 = %var.player/qformulavar1%
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 8192
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 16384
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q14 = %var.player/qformulavar1%
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 16384
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 32768
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q15 = %var.player/qformulavar1%
+    }
+    if () {
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 32768
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 65536
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q16 = %var.player/qformulavar1%
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 65536
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 131072
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q17 = %var.player/qformulavar1%
+        var qformulavar1 = %var.player/qstorage1%
+        var qformulavar1 /= 131072
+        var qformulavar2 = %var.player/qstorage1%
+        var qformulavar2 /= 262144
+        var qformulavar2 *= 2
+        var qformulavar1 -= %var.player/qformulavar2%
+        var q18 = %var.player/qformulavar1%
+    }
+    if () { 
+        var q1 *= -2
+        var q1 += 4
+        var q2 *= -2
+        var q2 += 4
+        var q3 *= -2
+        var q3 += 4
+        var q4 *= -2
+        var q4 += 4
+        var q5 *= -2
+        var q5 += 4
+        var q6 *= -2
+        var q6 += 4
+        var q7 *= -2
+        var q7 += 4
+        var q8 *= -2
+        var q8 += 4
+        var q9 *= -2
+        var q9 += 4
+        var q10 *= -2
+        var q10 += 4
+        var q11 *= -2
+        var q11 += 4
+        var q12 *= -2
+        var q12 += 4
+    }
+    if () {
+        var q13 *= -2
+        var q13 += 4
+        var q14 *= -2
+        var q14 += 4
+        var q15 *= -2
+        var q15 += 4
+        var q16 *= -2
+        var q16 += 4
+        var q17 *= -2
+        var q17 += 4
+        var q18 *= -2
+        var q18 += 4
+    }
+    pause 5
+    if () {
+        var qformulavar1 unset
+        var qformulavar2 unset
+        var q1 unset
+        var q2 unset
+        var q3 unset
+        var q4 unset
+        var q5 unset
+        var q6 unset
+        var q7 unset
+        var q8 unset
+        var q9 unset
+        var q10 unset
+        var q11 unset
+        var q12 unset
+        var q13 unset
+        var q14 unset
+        var q15 unset
+        var q16 unset
+        var q17 unset
+        var q18 unset
+    }
+
+//Quest Menu Open
+function "Quest Formula 1"
+displayMenu "Quests"
+
+goto function "Defeat Detect 1"
+    if (var q1var1 = 1) {
+        var q1var2 = %var.player/q1var1%
+    } else {
+        var q1var2 unset
+    }
+    var q1 = %var.player/qstorage1% 
+    var q1 /= 2
+    var q1 *= 2
+    var q1 -= %var.player/qstorage1%
+    var q1 *= -1
+    if (var q1 = 0, var dropped1 = 1, var dropchance1 <= 7 0, var dropchance1 > 0 0) {
+        var q1var1 += 1
+    }
+    if (var q1 = 0, var dropped2 = 1, var dropchance2 <= 7 0, var dropchance2 > 0 0) {
+        var q1var1 += 1
+    }
+    if (var q1 = 0, var dropped3 = 1, var dropchance3 <= 7 0, var dropchance3 > 0 0) {
+        var q1var1 += 1
+    }
+    if (var q1 = 0, var dropped4 = 1, var dropchance4 <= 7 0, var dropchance4 > 0 0) {
+        var q1var1 += 1
+    }
+    if (var q1 = 0, var dropped5 = 1, var dropchance5 <= 7 0, var dropchance5 > 0 0) {
+        var q1var1 += 1
+    }
+    if (var q1 = 0, var dropped6 = 1, var dropchance6 <= 7 0, var dropchance6 > 0 0) {
+        var q1var1 += 1
+    }
+    if (var q1 = 0, var dropped7 = 1, var dropchance7 <= 7 0, var dropchance7 > 0 0) {
+        var q1var1 += 1
+    }
+    if (var q1 = 0, var dropped8 = 1, var dropchance8 <= 7 0, var dropchance8 > 0 0) {
+        var q1var1 += 1
+    }
+    if (var q1var1 = 1, var q1var2 = 1) {
+        var q1var1 unset
+        var q1var2 unset
+    }
+    if (var q1 = 0, var q1var1 >= 2) {
+        chat &a
+        chat "&a✍ &a&lLucky 7&a Quest&8 Completed:"
+        chat "&8↳ &a+5 &b✯ Magic Find"
+        chat &a
+        var permmf += 5
+        var qstorage1 += 1
+        var sound = 7
+        var q1var1 unset
+        function "Sounds"
+    }
+    if (var q3var1 >= 1) {
+        var q3var2 = %var.player/q3var1%
+    } else {
+        var q3var2 unset
+    }
+    var q3 = %var.player/qstorage1% 
+    var q3var = %var.player/qstorage1%
+    var q3 /= 4
+    var q3var /= 8
+    var q3var *= 2
+    var q3 -= %var.player/q3var%
+    var q3var unset
+    if (var q3 = 0, var dropped1 = 1, var dropchance1 <= 5 0, var dropchance1 > 0 0) { 
+        var q3var1 += 1
+    }
+    if (var q3 = 0, var dropped2 = 1, var dropchance2 <= 5 0, var dropchance2 > 0 0) {
+        var q3var1 += 1
+    }
+    if (var q3 = 0, var dropped3 = 1, var dropchance3 <= 5 0, var dropchance3 > 0 0) {
+        var q3var1 += 1
+    }
+    if (var q3 = 0, var dropped4 = 1, var dropchance4 <= 5 0, var dropchance4 > 0 0) {
+        var q3var1 += 1
+    }
+    if (var q3 = 0, var dropped5 = 1, var dropchance5 <= 5 0, var dropchance5 > 0 0) {
+        var q3var1 += 1
+    }
+    if (var q3 = 0, var dropped6 = 1, var dropchance6 <= 5 0, var dropchance6 > 0 0) {
+        var q3var1 += 1
+    }
+    if (var q3 = 0, var dropped7 = 1, var dropchance7 <= 5 0, var dropchance7 > 0 0) {
+        var q3var1 += 1
+    }
+    if (var q3 = 0, var dropped8 = 1, var dropchance8 <= 5 0, var dropchance8 > 0 0) {
+        var q3var1 += 1
+    }
+    if (var q3var1 = %var.player/q3var2%) {
+        var q3var1 unset
+        var q3var2 unset
+    }
+    if (var q3 = 0, var q3var1 = 3) {
+        chat &a
+        chat "&a✍ &a&lStreak of Fortune&a Quest&8 Completed:"
+        chat "&8↳ &a+20 &b✯ Magic Find&7"
+        chat "&8↳ &a+ &eLucky Pendant &8( In Accessory Bag )"
+        chat &a
+        var permmf += 20
+        var qstorage1 += 4
+        var sound = 7
+        var q3var1 unset
+        function "Sounds"
+    }
+    function "Defeat Detect 2"
+
+goto function "Defeat Detect 2"
+    if () {
+        var q2 = %var.player/qstorage1%
+        var q2var = %var.player/qstorage1%
+        var q2 /= 2
+        var q2var /= 4
+        var q2var *= 2
+        var q2 -= %var.player/q2var% 
+        var q2var unset
+        var q4 = %var.player/qstorage1% 
+        var q4var = %var.player/qstorage1%
+        var q4 /= 8
+        var q4var /= 16
+        var q4var *= 2
+        var q4 -= %var.player/q4var%
+        var q4var unset
+        var q5 = %var.player/qstorage1%
+        var q5var = %var.player/qstorage1%
+        var q5 /= 16
+        var q5var /= 32
+        var q5var *= 2
+        var q5 -= %var.player/q5var%
+        var q5var unset
+    }
+    if (var q2 = 0, var dropped1 = 1, var dropchance1 <= 0.0001 0, var dropchance1 > 0 0) {
+        chat &a
+        chat "&a✍ &a&lOne in a Million&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 2
+        var sound = 7
+        function "Sounds"
+    }
+    if (var q2 = 0, var dropped2 = 1, var dropchance2 <= 0.0001 0, var dropchance2 > 0 0) {
+        chat &a
+        chat "&a✍ &a&lOne in a Million&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 2
+        var sound = 7
+        function "Sounds"
+    }
+    if (var q2 = 0, var dropped3 = 1, var dropchance3 <= 0.0001 0, var dropchance3 > 0 0) {
+        chat &a
+        chat "&a✍ &a&lOne in a Million&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 2
+        var sound = 7
+        function "Sounds"
+    }
+    if (var q2 = 0, var dropped4 = 1, var dropchance4 <= 0.0001 0, var dropchance4 > 0 0) {
+        chat &a
+        chat "&a✍ &a&lOne in a Million&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 2
+        var sound = 7
+        function "Sounds"
+    }
+    if (var q2 = 0, var dropped5 = 1, var dropchance5 <= 0.0001 0, var dropchance5 > 0 0) {
+        chat &a
+        chat "&a✍ &a&lOne in a Million&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 2
+        var sound = 7
+        function "Sounds"
+    }
+    if (var q2 = 0, var dropped6 = 1, var dropchance6 <= 0.0001 0, var dropchance6 > 0 0) {
+        chat &a
+        chat "&a✍ &a&lOne in a Million&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 2
+        var sound = 7
+        function "Sounds"
+    }
+    if (var q2 = 0, var dropped7 = 1, var dropchance7 <= 0.0001 0, var dropchance7 > 0 0) {
+        chat &a
+        chat "&a✍ &a&lOne in a Million&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 2
+        var sound = 7
+        function "Sounds"
+    }
+    if (var q2 = 0, var dropped8 = 1, var dropchance8 <= 0.0001 0, var dropchance8 > 0 0) {
+        chat &a
+        chat "&a✍ &a&lOne in a Million&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 2
+        var sound = 7
+        function "Sounds"
+    }
+    if (var q4 = 0, var dropped1 = 0 0, var dropped2 = 0 0, var dropped3 = 0 0, var dropped4 = 0 0) {
+        var q4var1 += 1
+    } else {
+        var q4var1 unset
+    }
+    if (var q4 = 0, var q4var1 >= 10) {
+        chat &a
+        chat "&a✍ &a&lReverse Luck&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 8
+        var q4var1 unset
+        var sound = 7
+        function "Sounds"
+    }
+    if (var q5 = 0, var prevmobid = %var.player/mobid%, var dropped1 = 1) {
+        var q5var1 += 1
+    } else {
+        var q5var1 unset
+    }
+    if (var q5 = 0, var prevmobid = %var.player/mobid%, var dropped2 = 1) {
+        var q5var2 += 1
+    } else {
+        var q5var2 unset
+    }
+    if (var q5 = 0, var prevmobid = %var.player/mobid%, var dropped3 = 1) {
+        var q5var3 += 1
+    } else {
+        var q5var3 unset
+    }
+    if (var q5 = 0, var prevmobid = %var.player/mobid%, var dropped4 = 1) {
+        var q5var4 += 1
+    } else {
+        var q5var4 unset
+    } 
+    if (var q5 = 0, var prevmobid = %var.player/mobid%, var dropped5 = 1) {
+        var q5var5 += 1
+    } else {
+        var q5var5 unset
+    } 
+    if (var q5 = 0, var prevmobid = %var.player/mobid%, var dropped6 = 1) {
+        var q5var6 += 1
+    } else {
+        var q5var6 unset
+    } 
+    if (var q5 = 0, var prevmobid = %var.player/mobid%, var dropped7 = 1) {
+        var q5var7 += 1
+    } else {
+        var q5var7 unset
+    } 
+    if (var q5 = 0, var prevmobid = %var.player/mobid%, var dropped8 = 1) {
+        var q5var8 += 1
+    } else {
+        var q5var8 unset
+    } 
+    if or (var q5var1 >= 5, var q5var2 >= 5, var q5var3 >= 5, var q5var4 >= 5, var q5var5 >= 5, var q5var6 >= 5, var q5var6 >= 5, var q5var7 >= 5, var q5var8 >= 5) {
+        var q5var9 = 1
+    } else {
+        var q5var9 unset
+    }
+    if (var q5 = 0, var q5var5 = 1) {
+        chat &a
+        chat "&a✍ &a&lEcho Collector&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 16
+        var sound = 7
+        function "Sounds"
+    } 
+    var q6 = %var.player/qstorage1% 
+    var q6var = %var.player/qstorage1%
+    var q6 /= 32
+    var q6var /= 64
+    var q6var *= 2
+    var q6 -= %var.player/q6var%
+    var q6var unset
+    var q6var1 = %var.player/maxhp%
+    var q6var1 /= 10
+    if (var q6 = 0, var hp < %var.player/q6var1%) {
+        var q6var2 += 1
+    } else {
+        var q6var2 unset
+    }
+    var q6var1 unset
+    if (var q6var2 >= 10) {
+        chat &a
+        chat "&a✍ &a&lGlass Cannon&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 32
+        var sound = 7
+        function "Sounds"
+    }
+    function "Defeat Detect 3"
+goto function "Defeat Detect 3"
+    //Add "var mobkills += 1 in Killed Action"
+    if () {
+        var q7 = %var.player/qstorage1%
+        var q7var = %var.player/qstorage1%
+        var q7 /= 64
+        var q7var /= 128
+        var q7var *= 2
+        var q7 -= %var.player/q7var%
+        var q7var unset
+        var q8 = %var.player/qstorage1%
+        var q8var = %var.player/qstorage1%
+        var q8 /= 128
+        var q8var /= 256
+        var q8var *= 2
+        var q8 -= %var.player/q8var%
+        var q8var unset
+        var q9 = %var.player/qstorage1%
+        var q9var = %var.player/qstorage1%
+        var q9 /= 256
+        var q9var /= 512
+        var q9var *= 2
+        var q9 -= %var.player/q9var%
+        var q9var unset
+    }
+    if () {
+        var q10 = %var.player/qstorage1%
+        var q10var = %var.player/qstorage1%
+        var q10 /= 512
+        var q10var /= 1024
+        var q10var *= 2
+        var q10 -= %var.player/q10var%
+        var q10var unset
+        var q10var1 = %var.player/maxmobhp%
+        var q10var1 *= 20
+    }
+    if (var q7 = 0, var mobkills >= 10000) {
+        chat &a
+        chat "&a✍ &a&lVeteran's Path&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 64
+        var sound = 7
+        function "Sounds"
+    }
+    //Add "var catks += 1 in Crit Action"
+    if (var q8 = 0, var catks >= 10000) {
+        chat &a
+        chat "&a✍ &a&lMaster of Crits&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 128
+        var sound = 7
+        function "Sounds"
+    }
+    if (var q9 = 0, var woodmf = %var.player/str%) {
+        chat &a
+        chat "&a✍ &a&lStat Sync&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 256
+        var sound = 7
+        function "Sounds"
+    }
+    if (var q10 = 0, var damage = %var.player/q10var1%) {
+        chat &a
+        chat "&a✍ &a&lOverkill&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 512
+        var sound = 7
+        function "Sounds"
+    }
+    var q10var1 unset
+    if () {
+        var dropped1 unset
+        var dropped2 unset
+        var dropped3 unset
+        var dropped4 unset
+        var dropped5 unset
+        var dropped6 unset
+        var dropped7 unset
+        var dropped8 unset
+    }
+
+
+    var q11 = %var.player/qstorage1%
+    var q11var = %var.player/qstorage1%
+    var q11 /= 1024
+    var q11var /= 2048
+    var q11var *= 2
+    var q11 -= %var.player/q11var%
+    var q11var unset
+    var q12 = %var.player/qstorage1%
+    var q12var = %var.player/qstorage1%
+    var q12 /= 2048
+    var q12var /= 4096
+    var q12var *= 10
+    var q12 -= %var.player/q12var%
+    var q12var unset
+    if (var q11 = 0, var level >= 5) {
+        chat &a
+        chat "&a✍ &a&lFirst Step&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 1024
+        var sound = 7
+        function "Sounds"
+    }
+    if (var q12 = 0, var level >= 50) {
+        chat &a
+        chat "&a✍ &a&lBreaking Limits&a Quest&8 Completed:"
+        chat "&8↳ &a+&a&knanika"
+        chat &a
+        var qstorage1 += 2048
+        var sound = 7
+        function "Sounds"
+    }
+    
+goto function "Quest Stats 1"
+    var qvar/temp = var qstorage1
+    var qvar/temp &= 1
+    if (var qvar/temp = 1 0) {
+        var mf += 5
+    }

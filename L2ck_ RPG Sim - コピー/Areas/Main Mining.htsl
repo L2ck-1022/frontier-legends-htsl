@@ -1,0 +1,205 @@
+//Titanium Heavy-Pick
+if (var mlevel >= 15, hasItem slot_1 Metadata Hand "Any Amount") {
+    var mpower += 6
+    var eff += 40
+}
+//Mithril Heavy-Pick
+if (var mlevel >= 19, hasItem slot_2 Metadata Hand "Any Amount") {
+    var mpower += 7
+    var eff += 70
+}
+//Luminous Pointed-Pick
+if (var mlevel >= 24, hasItem slot_3 Metadata Hand "Any Amount") {
+    var mpower += 8
+    var eff += 100
+}
+//Refined Adamantite Pickaxe
+if (var mlevel >= 30, hasItem slot_4 Metadata Hand "Any Amount") {
+    var mpower += 9
+    var eff += 150
+}
+//Inverted Demonium Pickaxe
+if (var mlevel >= 37, hasItem slot_5 Metadata Hand "Any Amount") {
+    var mpower += 10
+    var eff += 200
+}
+//Titanium Precision-Pick
+if (var mlevel >= 17, hasItem slot_6 Metadata Hand "Any Amount") {
+    var mpower += 6
+    var eff += 60
+}
+//Mithril Speed-Pick
+if (var mlevel >= 22, hasItem slot_7 Metadata Hand "Any Amount") {
+    var mpower += 7
+    var eff += 90
+}
+//Titanium Helmet
+if (var mlevel >= 13, hasItem slot_10 Metadata Armor "Any Amount") {
+    var def += 18
+    var eff += 8
+    var mxpmulti += 20
+    var setvar1 += 1
+}
+//Titanium Chestplate
+if (var mlevel >= 13, hasItem slot_11 Metadata Armor "Any Amount") {
+    var maxhp += 10
+    var def += 30
+    var eff += 15
+    var setvar1 += 1
+}
+//Titanium Leggings
+if (var mlevel >= 13, hasItem slot_12 Metadata Armor "Any Amount") {
+    var def += 24
+    var mxpmulti += 10
+    var setvar1 += 1
+}
+//Titanium Boots
+if (var mlevel >= 13, hasItem slot_13 Metadata Armor "Any Amount") {
+    var def += 15
+    var eff += 5
+    var agility += 1
+    var setvar1 += 1
+}
+//Mithril Helmet
+if (var mlevel >= 15, hasItem slot_14 Metadata Armor "Any Amount") {
+    var def += 24
+    var eff += 12
+    var minemf += 8
+    var mxpmulti += 30
+    var setvar2 += 1
+}
+//Mithril Chestplate
+if (var mlevel >= 19, hasItem slot_15 Metadata Armor "Any Amount") {
+    var maxhp += 12
+    var def += 40
+    var eff += 22
+    var setvar2 += 1
+}
+//Mithril Leggings
+if (var mlevel >= 19, hasItem slot_16 Metadata Armor "Any Amount") {
+    var def += 32
+    var eff += 15
+    var mxpmulti += 15
+    var setvar2 += 1
+}
+//Mithril Boots
+if (var mlevel >= 19, hasItem slot_17 Metadata Armor "Any Amount") {
+    var def += 20
+    var eff += 10
+    var agility += 1
+    var setvar2 += 1
+}
+//Luminite Helmet
+if (var mlevel >= 24, hasItem slot_19 Metadata Armor "Any Amount") {
+    var def += 30
+    var eff += 18
+    var mxpmulti += 40
+    var setvar3 += 1
+}
+//Luminite Chestplate
+if (var mlevel >= 24, hasItem slot_20 Metadata Armor "Any Amount") {
+    var maxhp += 18
+    var def += 50
+    var eff += 35
+    var setvar3 += 1
+}
+//Luminite Leggings
+if (var mlevel >= 24, hasItem slot_21 Metadata Armor "Any Amount") {
+    var def += 40
+    var eff += 22
+    var mxpmulti += 20
+    var setvar3 += 1
+}
+//Luminite Boots
+if (var mlevel >= 24, hasItem slot_22 Metadata Armor "Any Amount") {
+    var def += 25
+    var eff += 15
+    var agility += 1
+    var setvar3 += 1
+}
+//Adamantite Helmet
+if (var mlevel >= 30, hasItem slot_23 Metadata Armor "Any Amount") {
+    var def += 40
+    var cc += 8
+    var eff += 28
+    var mxpmulti += 50
+    var setvar4 += 1
+}
+//Adamantite Chestplate
+if (var mlevel >= 30, hasItem slot_24 Metadata Armor "Any Amount") {
+    var maxhp += 25
+    var def += 65
+    var eff += 50
+    var setvar4 += 1
+}
+//Adamantite Leggings
+if (var mlevel >= 30, hasItem slot_25 Metadata Armor "Any Amount") {
+    var def += 52
+    var eff += 32
+    var mxpmulti += 25
+    var setvar4 += 1
+}
+//Adamantite Boots
+if (var mlevel >= 30, hasItem slot_26 Metadata Armor "Any Amount") {
+    var def += 35
+    var eff += 22
+    var agility += 1
+    var setvar4 += 1
+}
+//Demonium Helmet
+if (var mlevel >= 37, hasItem slot_28 Metadata Armor "Any Amount") {
+    var def += 50
+    var str += 5
+    var cc += 12
+    var eff += 40
+    var mxpmulti += 70
+    var setvar5 += 1
+}
+//Demonium Chestplate
+if (var mlevel >= 37, hasItem slot_29 Metadata Armor "Any Amount") {
+    var maxhp += 30
+    var def += 70
+    var str += 8
+    var eff += 70
+    var setvar5 += 1
+}
+//Demonium Leggings
+if (var mlevel >= 37, hasItem slot_30 Metadata Armor "Any Amount") {
+    var def += 65
+    var str += 5
+    var eff += 45
+    var mxpmulti += 35
+    var setvar5 += 1
+}
+//Demonium Boots
+if (var mlevel >= 37, hasItem slot_31 Metadata Armor "Any Amount") {
+    var def += 42
+    var str += 3
+    var eff += 30
+    var agility += 1
+    var setvar5 += 1
+}
+//Titanium Sword
+if (hasItem slot_1 Metadata Hand "Any Amount") {
+    var str += 18
+}
+//Mithril Rapier
+if (hasItem slot_2 Metadata Hand "Any Amount") {
+    var str += 28
+    var cc += 12
+}
+//Luminate Blade
+if (hasItem slot_3 Metadata Hand "Any Amount") {
+    var str += 38
+    var cc += 18
+}
+//Adamantite Greatsword
+if (hasItem slot_4 Metadata Hand "Any Amount") {
+    var str += 50
+    var cc += 25
+}
+//Demonium Scythe
+if (hasItem slot_5 Metadata Hand "Any Amount") {
+    var str += 65
+    var cc += 30
+}

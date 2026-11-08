@@ -1,0 +1,661 @@
+//Main Item Stats
+    goto function "Item Stats 4 (DForest)"
+    //Frozen Blade
+    if (var level >= 45, hasItem slot_1 Metadata Hand "Any Amount") {
+        var str += 55
+    }
+    //Blizzard Bow
+    if (var level >= 48, hasItem slot_2 Metadata Hand "Any Amount") {
+        var str += 50
+    }
+    //Frostbite Staff
+    if (var level >= 50, hasItem slot_3 Metadata Hand "Any Amount") {
+        var str += 45
+        var maxmana += 150
+        var mmulti += 35
+    }
+    //Aurora Blade
+    if (var level >= 55, hasItem slot_4 Metadata Hand "Any Amount") {
+        var str += 70
+        var cc += 15
+        var cd += 30
+    }    
+    //Frozen Warrior Helm
+    if (var level >= 45, hasItem slot_5 Metadata Armor "Any Amount") {
+        var def += 35
+        var maxhp += 50
+    }
+    //Elemental Ice Crown
+    if (var level >= 48, hasItem slot_6 Metadata Armor "Any Amount") {
+        var def += 30
+        var maxmana += 100
+        var mprmulti += 20
+        var mmulti += 15
+    }
+    //Dragon Scale Helmet
+    if (var level >= 52, hasItem slot_7 Metadata Armor "Any Amount") {
+        var def += 45
+        var maxmana += 80
+    }
+    //Frozen Warrior Armor
+    if (var level >= 45, hasItem slot_8 Metadata Armor "Any Amount") {
+        var def += 50
+        var maxmana += 70
+    }
+    //Elemental Ice Robe 
+    if (var level >= 48, hasItem slot_9 Metadata Armor "Any Amount") {
+        var def += 40
+        var maxmana += 150
+        var mmulti += 20
+    }
+    //Dragon Scale Chestplate
+    if (var level >= 52, hasItem slot_10 Metadata Armor "Any Amount") {
+        var def += 65
+        var maxhp += 100
+    }
+    //Frozen Warrior Leggings
+    if (var level >= 45, hasItem slot_11 Metadata Armor "Any Amount") {
+        var def += 40
+        var maxhp += 60
+        var agility += 1
+    }
+    //Elemental Ice Leggings
+    if (var level >= 48, hasItem slot_12 Metadata Armor "Any Amount") {
+        var def += 35
+        var maxmana += 120
+        var mprmulti += 15
+        var agility += 1
+    }
+    //Dragon Scale Leggings
+    if (var level >= 52, hasItem slot_13 Metadata Armor "Any Amount") {
+        var def += 55
+        var maxhp += 90
+        var agility += 1
+    }
+    //Frozen Warrior Boots
+    if (var level >= 45, hasItem slot_14 Metadata Armor "Any Amount") {
+        var def += 30
+        var maxhp += 40
+        var agility += 1
+    }
+    //Elemental Ice Boots
+    if (var level >= 48, hasItem slot_15 Metadata Armor "Any Amount") {
+        var def += 25
+        var maxmana += 80
+        var mprmulti += 12
+        var agility += 2
+    }
+goto function "Item Stats 5 (Snowfield)"
+    //Dragon Scale Boots
+    if (var level >= 52, hasItem slot_16 Metadata Armor "Any Amount") {
+        var def += 40
+        var maxhp += 70
+        var agility += 2
+    }
+    //Frost Wolf Helm
+    if (var level >= 46, hasItem slot_17 Metadata Armor "Any Amount") {
+        var def += 32
+        var maxhp += 55
+        var agility += 1
+    }
+    //Frost Wolf Boots
+    if (var level >= 45, hasItem slot_18 Metadata Armor "Any Amount") {
+        var def += 28
+        var agility += 2
+    }
+    //Wolf Fang Blade
+    if (var level >= 47, hasItem slot_19 Metadata Hand "Any Amount") {
+        var str += 52
+        var cc += 18
+    }
+    //Elemental Crown
+    if (var level >= 49, hasItem slot_20 Metadata Armor "Any Amount") {
+        var def += 33
+        var maxmana += 120
+        var mprmulti += 25
+    }
+    //Frozen Spirit Staff
+    if (var level >= 51, hasItem slot_21 Metadata Hand "Any Amoubt") {
+        var str += 48
+        var maxmana += 180
+        var mmulti += 40
+    }
+    //Dragoconic Heavy-platemail
+    if (var level >= 54, hasItem slot_22 Metadata Armor "Any Amount") {
+        var def += 70
+        var maxhp += 120
+    }
+    //Dragon Fang Sword
+    if (var level >= 56, hasItem slot_23 Metadata Hand "Any Amount") {
+        var str += 75
+        var cc += 25
+        var cd += 50
+    }
+
+
+//Abilities
+    goto function "Attack Skill 2"
+        //Frozen Blade
+        if (var level >= 45, hasItem slot_1 Metadata Hand "Any Amount", var asvar8 >= 1 0, var mobid >= 31, var mobid <= 39) {
+            var damagemulti += 40
+        }
+        if (var level >= 45, hasItem slot_1 Metadata Hand "Any Amount", placeholder %random.int/1 101% <= 30) {
+            var asvar8 = 4
+        }
+        //Aurora Blade
+        if (var rcvar5/2 = 1 0) {
+            var rcvar5/2 unset
+            var damagemulti += 200
+            var rcvar5/3 = 8
+        }
+        //Frost Wolf Helm
+        if (var level >= 45, hasItem slot_17 Metadata Armor "Any Amount", placeholder %random.int/1 101% <= 15) {
+            var mobstr = 0
+        }
+        //Frozen Spirit Staff
+        if (var level >= 51, hasItem slot_21 Metadata Armor "Any Amount", var magic = 1, placeholder %random.int/1 101% <= 20) {
+            var asvar9 = 3
+        }
+        //Dragonscale Armor
+        if (var level >= 54, hasItem slot_22 Metadata Armor "Any Amount", var takendmg > 0, placeholder %random.int/1 101% <= 10) {
+            var asvar10 = 6
+        } 
+        //Frozen Warrior Set
+        if (var level >= 45, var takendmg > 0, placeholder %random.int/1 101% <= 10, hasItem slot_5 Metadata Armor "Any Amount", hasItem slot_8 Metadata Armor "Any Amount", hasItem slot_11 Metadata Armor "Any Amount", hasItem slot_14 Metadata Armor "Any Amount") {
+            var asvar11 = 2
+        }
+        //Elemental Ice Set
+        if (var level >= 48, var magic = 1, placeholder %random.int/1 101% <= 15, hasItem slot_6 Metadata Armor "Any Amount", hasItem slot_9 Metadata Armor "Any Amount", hasItem slot_12 Metadata Armor "Any Amount", hasItem slot_15 Metadata Armor "Any Amount") {
+            var asvar12 = 5
+        }
+        //Elemental Ice Set
+        if (var level >= 48, var magic = 1, var frozen/mob = 1, hasItem slot_6 Metadata Armor "Any Amount", hasItem slot_9 Metadata Armor "Any Amount", hasItem slot_12 Metadata Armor "Any Amount", hasItem slot_15 Metadata Armor "Any Amount") {
+            var dmgmulti += 300
+        }
+
+    goto function "Right Click Skill 1"
+        //Frostbite Staff
+        if (var level >= 50, hasItem slot_3 Metadata Hand "Any Amount", var rcvar4 = 0 0) {
+            var rcvar4 = 20
+        }
+        //Aurora Blade
+        if (var level >= 55, hasItem slot_4 Metadata Hand "Any Amount") {
+            var rcvar5/1 = 30
+            var rcvar5/2 = 1
+        }
+
+    goto function "Skill Stats 1"
+        //Frostbite Staff
+        if (var rcvar4 >= 14 0) {
+            var frozen/mob = 1
+        }
+        //Aurora Blade
+        if (var rcvar5/3 >= 1 0) {
+            var rcvar5 -= 1
+            var frozen/mob = 1
+        }
+        //Frost Wolf Helm
+        var ssvar3 = %var.player/hp%
+        var ssvar3 *= 100
+        var ssvar3 /= %var.player/maxhp%
+        if (var ssvar3 <= 50, hasItem slot_17 Metadata Armor "Any Amount") {
+            var damagemulti += 30
+        }
+        //Wolf Fang Blade
+        if (var level >= 47, hasItem slot_19 Metadata Hand "Any Amount", var frozen/mob = 1 0) {
+            var cc += 30
+        }
+        //Elemental Crown 
+        if (var ssvar4 >= 40 0) {
+            var takendmg /= 2
+            var mmulti += 40
+        }
+        //Frozen Spirit Staff
+        if (var asvar9 >= 1 0) {
+            var frozen/mob = 1
+        }
+        //Dragonscale Armor
+        if (var asvar10 >= 1 0) {
+            var frozen/mob -= 1
+        }
+        //Frozen Warrior Set
+        if (var asvar11 >= 1 0) {
+            var def += 100
+            var hpr += 8
+        }
+        //Elemental Ice Set
+        if (var asvar12 >= 1 0) {
+            var frozen/mob -= 1
+        }
+        //Dragon Scale Set
+        var asvar13/1 = var hp
+        var asvar13/1 *= 100
+        var asvar13/1 /= var maxhp 
+        if (var level >= 52, var asvar13/1 <= 20, var asvar13/2 = 0 0, hasItem slot_7 Metadata Armor "Any Amount", hasItem slot_10 Metadata Armor "Any Amount", hasItem slot_13 Metadata Armor "Any Amount", hasItem slot_16 Metadata Armor "Any Amount") {
+            var asvar13/2 = 1
+            var asvar13/3 = 10
+        }
+        if (var asvar13/3 >= 1 0) {
+            var takendmg = 0
+            var hpr += 10
+            var dmgmulti += 100
+        }
+        
+    goto function "Sneak Skill 1"
+        //Elemental Crown
+        if (var level >= 49, hasItem slot_20 Metadata Armor "Any Amount", var ssvar4 = 0 0, isSneaking) {
+            var ssvar4 = 45
+        }
+
+    goto function "Cooldown System"
+        //Frozen Blade
+        if (var asvar8 >= 1 0) {
+            var asvar8 -= 1
+        }
+        //Frostbite Staff
+        if (var rcvar4 >= 1 0) {
+            var rcvar4 -= 1
+        }
+        //Aurora Blade
+        if (var rcvar5/1 >= 1 0) {
+            var rcvar5/1 -= 1
+        }
+        if (var rcvar5/3 >= 1 0) {
+            var rcvar5/3 -= 1
+        }
+        //Elemental Crown
+        if (var ssvar4 >= 1 0) {
+            var ssvar4 -= 1
+        }
+        //Frozen Spirit Staff
+        if (var asvap9 >= 1 0) {
+            var asvar9 -= 1
+        }
+        //Dragonscale Armor
+        if (var asvar10 >= 1 0) {
+            var asvar10 -= 1
+        }
+        //Frozen Warrior Set
+        if (var asvar11 >= 1 0) {
+            var asvar11 -= 1
+        }
+        //Elemental Ice Set
+        if (var asvar12 >= 1 0) {
+            var asvar12 -= 1
+        }
+        //Dragon Scale Set
+        if (var asvar13/3 >= 1 0) {
+            var asvar13/3 -= 1
+        }
+
+//Mobs
+goto function "Item Drops 3"
+    if (var mobid = 31, placeholder %random.decimal/1 101% <= %var.player/dropchance1% 0) {
+        var dropped1 = 1
+        giveItem slot_1 true
+    } 
+    if (var mobid = 31, placeholder %random.decimal/1 101% <= %var.player/dropchance2% 0) {
+        var dropped2 = 1
+        giveItem slot_2 true
+    } 
+    if (var mobid = 31, placeholder %random.decimal/1 101% <= %var.player/dropchance3% 0) {
+        var dropped3 = 1
+        giveItem slot_3 true
+        chat "&6&lRARE DROP! &8( &9Frozen Fang &8) ( &b%var.player/dropchance3% Drop &8)"
+    } 
+    if (var mobid = 31, placeholder %random.decimal/1 101% <= %var.player/dropchance4% 0) {
+        var dropped4 = 1
+        giveItem slot_4 true
+        chat "&6&lRARE DROP! &8( &5Wolf Spirit Essence&8 ) ( &b%var.player/dropchance4%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    } 
+    if (var mobid = 31, placeholder %random.decimal/1 101% <= %var.player/dropchance5% 0) {
+        var dropped5 = 1
+        giveItem slot_5 true
+        chat "&9&lVERY RARE DROP! &8( &9Frost Wolf Helm&8 ) ( &b%var.player/dropchance5%% Drop &8)"
+        var sound = 4
+        function "Sounds"
+    } 
+    if (var mobid = 31, placeholder %random.decimal/1 101% <= %var.player/dropchance6% 0) {
+        var dropped6 = 1
+        giveItem slot_6 true
+        chat "&9&lVERY RARE DROP! &8( &9Frost Wolf Boots&8 ) ( &b%var.player/dropchance6%% Drop &8)"
+        var sound = 4
+        function "Sounds"
+    } 
+    if (var mobid = 31, placeholder %random.decimal/1 101% <= %var.player/dropchance7% 0) {
+        var dropped7 = 1
+        giveItem slot_7 true
+        chat "&9&lVERY RARE DROP! &8( &5Wolf Fang Blade&8 ) ( &b%var.player/dropchance7%% Drop &8)"
+        var sound = 4
+        function "Sounds"
+    } 
+    if (var mobid = 32, placeholder %random.decimal/1 101% <= %var.player/dropchance1% 0) {
+        var dropped1 = 1
+        giveItem slot_10 true
+        chat "&6&lRARE DROP! &8( &aIce Crystal &8) ( &b%var.player/dropchance1%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    }
+    if (var mobid = 32, placeholder %random.decimal/1 101% <= %var.player/dropchance2% 0) {
+        var dropped2 = 1
+        giveItem slot_11 true
+        chat "&6&lRARE DROP! &8( &9Elemental Core &8) ( &b%var.player/dropchance2%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    }
+    if (var mobid = 32, placeholder %random.decimal/1 101% <= %var.player/dropchance3% 0) {
+        var dropped3 = 1
+        giveItem slot_12 true
+        chat "&6&lRARE DROP! &8( &5Frozen Essence &8) ( &b%var.player/dropchance3%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    }
+    if (var mobid = 32, placeholder %random.decimal/1 101% <= %var.player/dropchance4% 0) {
+        var dropped4 = 1
+        giveItem slot_13 true
+        chat "&6&lRARE DROP! &8( &5Spirit Ice &8) ( &b%var.player/dropchance4%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    }
+    if (var mobid = 32, placeholder %random.decimal/1 101% <= %var.player/dropchance5% 0) {
+        var dropped5 = 1
+        giveItem slot_14 true
+        chat "&9&lVERY RARE DROP! &8( &5Elemental Crown &8) ( &b%var.player/dropchance5%% Drop &8)"
+        var sound = 4
+        function "Sounds"
+    }
+    if (var mobid = 32, placeholder %random.decimal/1 101% <= %var.player/dropchance6% 0) {
+        var dropped6 = 1
+        giveItem slot_15 true
+        chat "&9&lVERY RARE DROP! &8( &5Frozen Spirit Staff &8) ( &b%var.player/dropchance6%% Drop &8)"
+        var sound = 4
+        function "Sounds"
+    }
+    if (var mobid = 32, placeholder %random.decimal/1 101% <= %var.player/dropchance7% 0) {
+        var dropped7 = 1
+        giveItem slot_16 true
+        chat "&9&lVERY RARE DROP! &8( &5Glacial Ring &8) ( &b%var.player/dropchance7%% Drop &8)"
+        var sound = 4
+        function "Sounds"
+    }
+    if (var mobid = 33, placeholder %random.decimal/1 101% <= %var.player/dropchance1% 0) {
+        var dropped1 = 1
+        giveItem slot_19 true
+    }
+    if (var mobid = 33, placeholder %random.decimal/1 101% <= %var.player/dropchance2% 0) {
+        var dropped2 = 1
+        giveItem slot_20 true
+    }
+    if (var mobid = 33, placeholder %random.decimal/1 101% <= %var.player/dropchance3% 0) {
+        var dropped3 = 1
+        giveItem slot_21 true
+    }
+    if (var mobid = 33, placeholder %random.decimal/1 101% <= %var.player/dropchance4% 0) {
+        var dropped4 = 1
+        giveItem slot_22 true
+        chat "&6&lRARE DROP! &8( &6Dragon Heart &8) ( &b%var.player/dropchance4%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    }
+    if (var mobid = 33, placeholder %random.decimal/1 101% <= %var.player/dropchance5% 0) {
+        var dropped5 = 1
+        giveItem slot_23 true
+        chat "&6&lRARE DROP! &8( &6Draconic Heavy-platemail &8) ( &b%var.player/dropchance5%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    }
+    if (var mobid = 33, placeholder %random.decimal/1 101% <= %var.player/dropchance6% 0) {
+        var dropped6 = 1
+        giveItem slot_24 true
+        chat "&6&lRARE DROP! &8( &6Dragon Fang Sword &8) ( &b%var.player/dropchance6%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    }
+    if (var mobid = 33, placeholder %random.decimal/1 101% <= %var.player/dropchance7% 0) {
+        var dropped7 = 1
+        giveItem slot_25 true
+        chat "&9&lVERY RARE DROP! &8( &6Dragon Heart Amulet &8) ( &b%var.player/dropchance7% Drop &8)"
+        var sound = 4
+        function "Sounds"
+    }
+
+//Mobs
+//Frost Wolf
+    goto npc "a"
+    if (var attacking = 1 0) {
+        exit
+    } else {
+        var attacking = 1
+    }
+    var mobid = 41
+    var moblv = 45
+    var maxmobhp = 1800
+    var mobstr = 40
+    var mobgold = 150
+    var mobxp = 1520
+    var bdropchance1 = 22.0
+    var bdropchance2 = 18.0
+    var bdropchance3 = 10.0
+    var bdropchance4 = 4.0
+    var bdropchance5 = 1.0
+    var bdropchance6 = 0.5
+    var bdropchance7 = 0.6
+    function "Attacking"
+//Ice Elemental
+    goto npc "b"
+    if (var attacking = 1 0) {
+        exit
+    } else {
+        var attacking = 1
+    }
+    var mobid = 42
+    var moblv = 48
+    var maxmobhp = 1500
+    var mobstr = 55
+    var mobgold = 250
+    var mobxp = 2320
+    var bdropchance1 = 20.0
+    var bdropchance2 = 12.0
+    var bdropchance3 = 6.0
+    var bdropchance4 = 3.0
+    var bdropchance5 = 1.0
+    var bdropchance6 = 0.7
+    var bdropchance7 = 0.4
+    function "Attacking"
+//Frost Dragon
+    goto npc "c"
+    if (var attacking = 1 0) {
+        exit
+    } else {
+        var attacking = 1
+    }
+    var mobid = 43
+    var moblv = 52
+    var maxmobhp = 4000
+    var mobstr = 70
+    var mobgold = 740
+    var mobxp = 7220
+    var bdropchance1 = 30.0
+    var bdropchance2 = 15.0
+    var bdropchance3 = 5.0
+    var bdropchance4 = 20.0
+    var bdropchance5 = 2.0
+    var bdropchance6 = 1.5
+    var bdropchance7 = 1.0
+    function "Attacking"
+
+//Frost Heart Ring
+goto function ""
+    if (var accvar22 = 2) {
+        var accmaxhp += 80
+        var acchpr += 4
+    }
+goto gui "tempshop"
+if (var gold >= 18000, hasItem slot_10 Metadata Anywhere "Equal or Greater Amount", hasItem slot_19 Metadata Anywhere "Equal or Greater Amount", hasItem slot_28 Metadata Anywhere "Equal or Greater Amount") {
+    removeItem slot_10 true
+    removeItem slot_19 true
+    removeItem slot_28 true
+    var gold -= 18000
+    giveItem slot_1 true
+    var sound = 2
+    function "Sounds"
+    chat "&7[&a!&7] &aSuccessfully purchased the item!"
+} else {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&c✗ Not met the Requirements!"
+}
+
+//Elemental Amulet
+goto function ""
+    if (var accvar23 = 2) {
+        var accmaxmana += 200
+        var accmmulti += 25
+    }
+goto gui "tempshop"
+if (var gold >= 20000, hasItem slot_11 Metadata Anywhere "Equal or Greater Amount", hasItem slot_20 Metadata Anywhere "Equal or Greater Amount", hasItem slot_29 Metadata Anywhere "Equal or Greater Amount") {
+    removeItem slot_11 true
+    removeItem slot_20 true
+    removeItem slot_29 true
+    var gold -= 20000
+    giveItem slot_2 true
+    var sound = 2
+    function "Sounds"
+    chat "&7[&a!&7] &aSuccessfully purchased the item!"
+} else {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&c✗ Not met the Requirements!"
+}
+
+//Dragon Soul Pendant
+goto function ""
+    if (var accvar24 = 2) {
+        var accstr += 40
+        var accmaxhp += 120
+        var acccc += 20
+        var acccd += 40
+    }
+goto gui "tempshop"
+if (var gold >= 35000, hasItem slot_12 Metadata Anywhere "Equal or Greater Amount", hasItem slot_21 Metadata Anywhere "Equal or Greater Amount", hasItem slot_30 Metadata Anywhere "Equal or Greater Amount") {
+    removeItem slot_12 true
+    removeItem slot_21 true
+    removeItem slot_30 true
+    var gold -= 35000
+    giveItem slot_3 true
+    var sound = 2
+    function "Sounds"
+    chat "&7[&a!&7] &aSuccessfully purchased the item!"
+} else {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&c✗ Not met the Requirements!"
+}
+//Glacial Ring
+goto function ""
+    if (var accvar25 = 2) {
+        var accmaxmana += 150
+        var accmmulti += 20
+        var accmanar += 20
+    }
+//Dragon Heart Amulet
+goto function ""
+    if (var accvar26 = 2) {
+        var accmaxhp += 150
+        var accdef += 30
+        var accstr += 50
+        var acchpr += 6
+    }
+//Warming Potion
+goto function "Consumables"
+    if (var level >= , var consumeid = 7) {
+        var consumetime4 += 300
+        var hp += 40
+        removeItem slot_4 true
+        sound "Drink" 0.7 1.0 "Invokers Location"
+        chat "&7[&a!&7] Used &9Mummy's Curse Antidote&7!"
+        exit
+    }
+goto function "Consumables Stat"
+    if (var consumetime4 >= 1) {
+        var consumetime4 -= 1
+    }
+goto gui "tempshop"
+if (var gold >= 1200, hasItem slot_13 Metadata Anywhere "Equal or Greater Amount", hasItem slot_22 Metadata Anywhere "Equal or Greater Amount") {
+    removeItem slot_13 true
+    removeItem slot_22 true
+    var gold -= 1200
+    giveItem slot_4 true
+    var sound = 2
+    function "Sounds"
+    chat "&7[&a!&7] &aSuccessfully purchased the item!"
+} else {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&c✗ Not met the Requirements!"
+}
+
+//Frozen Spirit Elixir
+goto function "Consumables"
+    if (var level >= , var consumeid = 8) {
+        var consumetime4 += 300
+        var mana += 100
+        removeItem slot_4 true
+        sound "Drink" 0.7 1.0 "Invokers Location"
+        chat "&7[&a!&7] Used &9Mummy's Curse Antidote&7!"
+        exit
+    }
+goto function "Consumables Stat"
+    if (var consumetime4 >= 1) {
+        var mmulti += 30
+        var consumetime4 -= 1
+    }
+goto gui "tempshop"
+if (var gold >= 3000, hasItem slot_14 Metadata Anywhere "Equal or Greater Amount", hasItem slot_23 Metadata Anywhere "Equal or Greater Amount", hasItem slot_32 Metadata Anywhere "Equal or Greater Amount") {
+    removeItem slot_14 true
+    removeItem slot_23 true
+    removeItem slot_32 true
+    var gold -= 3000
+    giveItem slot_5 true
+    var sound = 2
+    function "Sounds"
+    chat "&7[&a!&7] &aSuccessfully purchased the item!"
+} else {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&c✗ Not met the Requirements!"
+}
+
+//Dragon's Blessing
+goto function "Consumables"
+    if (var level >= , var consumeid = 4) {
+        var consumetime4 += 300
+        var hp += 50
+        removeItem slot_4 true
+        sound "Drink" 0.7 1.0 "Invokers Location"
+        chat "&7[&a!&7] Used &9Mummy's Curse Antidote&7!"
+        exit
+    }
+goto function "Consumables Stat"
+    if (var consumetime4 >= 1) {
+        var strmulti += 50
+        var consumetime4 -= 1
+    }
+goto gui "tempshop"
+if (var gold >= 5000, hasItem slot_15 Metadata Anywhere "Equal or Greater Amount", hasItem slot_24 Metadata Anywhere "Equal or Greater Amount", hasItem slot_33 Metadata Anywhere "Equal or Greater Amount") {
+    removeItem slot_15 true
+    removeItem slot_24 true
+    removeItem slot_33 true
+    var gold -= 5000
+    giveItem slot_6 true
+    var sound = 2
+    function "Sounds"
+    chat "&7[&a!&7] &aSuccessfully purchased the item!"
+} else {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&c✗ Not met the Requirements!"
+}
+//Glacial Ring
+//Dragon Heart Amulet
+
+function "Cooldown System"
+    if (var aa12 >= 1 0) {
+        var aa12 -= 1
+    }

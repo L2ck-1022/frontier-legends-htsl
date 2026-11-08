@@ -1,0 +1,92 @@
+goto event "Player Join"
+    if or () {
+        var accmaxhp = 0
+        var accdef = 0
+        var accstr = 0
+        var acccc = 0
+        var acccd = 0
+        var acchpr = 0
+        var accmaxmana = 0
+        var acceff = 0
+        var accwoodmf = 0
+    }
+    if () {
+        var petmaxhp = 0
+        var petdef = 0
+        var petstr = 0
+        var petcc = 0
+        var petcd = 0
+        var pethpr = 0
+        var petmaxmana = 0
+        var peteff = 0
+        var petwoodmf = 0
+        var petminemf = 0
+        var petfxpmulti = 0
+    }
+    if () {
+        var maxhp = 20
+        var hp = 20
+        var mana = 100
+        var gold = 0
+        var level = 1
+        var gem = 0
+        var xp = 0
+    }
+    if () {
+        var accstorage1 = 0
+        var petstorage1 = 0
+    }
+
+goto function "Player Join Animation"
+    if () {
+        title "&kF" "" 0 1 0
+        pause 1
+        title "&kF" "" 0 1 0
+        pause 1
+        title "&kF" "" 0 1 0
+        pause 1
+        title "&kF" "" 0 1 0
+        pause 1
+        title "&kFr" "" 0 1 0
+        pause 1
+        title "&kFr" "" 0 1 0
+        pause 1
+        title "&kFr" "" 0 1 0
+        pause 1
+        title "&kFr" "" 0 1 0
+        pause 1
+        title "&kFro" "" 0 1 0
+        pause 1
+        title "&kFro" "" 0 1 0
+        pause 1
+        title "&kFro" "" 0 1 0
+        pause 1
+        title "&kFro" "" 0 1 0
+        pause 1
+        title "&kFron" "" 0 1 0
+        pause 1
+        title "&kFron" "" 0 1 0
+        pause 1
+        title "&kFron" "" 0 1 0
+        pause 1
+        title "&kFron" "" 0 1 0
+        pause 1
+        title "&kFront" "" 0 1 0
+        pause 1
+        title "&kFront" "" 0 1 0
+        pause 1
+        title "&kFront" "" 0 1 0
+        pause 1
+        title "&kFront" "" 0 1 0
+        pause 1
+        title "&kFronti" "" 0 1 0
+        pause 1
+        title "&kFronti" "" 0 1 0
+        pause 1
+        title "&kFronti" "" 0 1 0
+        pause 1
+        title "&kFronti" "" 0 1 0
+        pause 1
+        title "&kFrontie" "" 0 1 0
+        pause 1
+    }

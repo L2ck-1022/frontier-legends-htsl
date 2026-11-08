@@ -1,0 +1,537 @@
+//Normal Stats 
+    //Verdant Blade
+    if (var level >= 33, var tlevel >= 15, hasItem slot_1 Metadata Hand "Any Amount") {
+        var str += 25
+        var hpr = 2
+    }
+    //Thorn Dagger
+    if (var level >= 38, var tlevel >= 10, hasItem slot_2 Metadata Hand "Any Amount") {
+        var str += 30
+        var cc += 12
+    }
+    //Druid's Staff
+    if (var level >= 41, var tlevel >= 20, hasItem slot_3 Metadata Hand "Any Amount") {
+        var maxmana += 70
+        var str += 28
+        var mmulti += 20
+    }
+    //Nature's Bow
+    if (var level >= 38, var tlevel >= 15, hasItem slot_4 Metadata Hand "Any Amount") {
+        var str += 32
+        var cd += 30
+    }
+    //Spider Fang Dagger
+    if (var level >= 38, hasItem slot_5 Metadata Hand "Any Amount") {
+        var str += 28
+        var cc += 15
+    }
+    //Leaf Circlet
+    if (var level >= 33, var tlevel >= 15, hasItem slot_10 Metadata Armor "Any Amount") {
+        var def += 7
+        var maxmana += 25
+        var mpr += 1
+    }
+    //Leaf Robe
+    if (var level >= 33, var tlevel >= 20, hasItem slot_11 Metadata Armor "Any Amount") {
+        var def += 11
+        var maxmana += 30
+        var mmulti += 12
+    }
+    //Leaf Pants
+    if (var level >= 33, var tlevel >= 15, hasItem slot_12 Metadata Armor "Any Amount") {
+        var def += 9
+        var maxmana += 20
+        var agility += 1
+    }
+    //Leaf Sandals
+    if (var level >= 33, var tlevel >= 15, hasItem slot_13 Metadata Armor "Any Amount") {
+        var def += 6
+        var maxmana += 15
+        var mpr += 1
+    }
+    //Venomous Hood
+    if (var level >= 38, var tlevel >= 10, hasItem slot_19 Metadata Armor "Any Amount") {
+        var def += 15
+        var resistance += 15
+    }
+    //Venomous Scale Mail
+    if (var level >= 38, var tlevel >= 10, hasItem slot_20 Metadata Armor "Any Amount") {
+        var def += 25
+        var resistance += 20
+    }
+    //Venomous Leg Plates
+    if (var level >= 38, var tlevel >= 10, hasItem slot_21 Metadata Armor "Any Amount") {
+        var def += 20
+        var agility += 1
+    }
+    //Venomous Boots
+    if (var level >= 38, var tlevel >= 10, hasItem slot_22 Metadata Armor "Any Amount") {
+        var def += 14
+        var agility += 1
+    }
+    //Treant Crown
+    if (var level >= 38, var tlevel >= 15, hasItem slot_28 Metadata Armor "Any Amount") {
+        var maxhp += 10
+        var def += 9
+    }
+    //Treant Bark Armor
+    if (var level >= 38, var tlevel >= 15, hasItem slot_29 Metadata Armor "Any Amount") {
+        var maxhp += 15
+        var def += 15
+    }
+    //Treant Leg Guards
+    if (var level >= 38, var tlevel >= 15, hasItem slot_30 Metadata Armor "Any Amount") {
+        var maxhp += 12
+        var def += 10
+    }
+    //Treant Roots Boots
+    if (var level >= 38, var tlevel >= 10, hasItem slot_31 Metadata Armor "Any Amount") {
+        var maxhp += 8
+        var def += 8
+    }
+//Normal Abilities
+goto function "Attack SKill 1" 
+    //Verdant Blade
+    if (var level >= 33, var tlevel >= 15, hasItem slot_1 Metadata Hand "Any Amount", placeholder %random.int/1 101% <= 10) {
+        var hp += 5
+    }
+    //Nature's Bow
+    if (var level >= 38, var tlevel >= 20, hasItem slot_4 Metadata Hand "Any Amount") {
+        var asvar7 = 3
+    }
+    //Spider Fang Dagger
+    if (var level >= 38, hasItem slot_5 Metadata Hand "Any Amount", placeholder %random.int/1 101% <= 40) {
+        var poisondmg = %var.player/damage%
+        var poisondmg *= 2
+        var poisontime = 5
+    }
+
+goto function "Right Click SKill 1"
+    //Leaf Set
+    if (var level >= 33, var tlevel >= 20, hasItem slot_10 Metadata Armor "Any Amount", hasItem slot_11 Metadata Armor "Any Amount", hasItem slot_12 Metadata Armor "Any Amount", hasItem slot_13 Metadata Armor "Any Amount", placeholder %random.int/1 101% <= 10) {
+        var reqmana = 0
+    }
+    if (var mana < %var.player/reqmana%) {
+        var mana -= %var.player/reqmana%
+    } else {
+        sound "Anvil Land" 0.7 1.0 "Invokers Location"
+        chat "&7[&c!&7] &cYou don't have enough mana to use this ability!"
+        exit
+    }
+    //Druid's Staff
+    if (var level >= 41, var tlevel >= 20, hasItem slot_3 Metadata Hand "Any Amount", var rcvar3 = 0 0) {
+        var rcvar3 = 30
+    }
+
+goto function "Cooldown System"
+    //Druid's Staff
+    if (var rcvar3 >= 1 0) {
+        var rcvar3 -= 1
+    }
+
+goto function "Skill Stats"
+    //Druid's Staff
+    if (var rcvar3 >= 26) {
+        var hp += 5
+        var def += 20
+    }
+    //Leaf Set
+    var ssvar1 = %var.player/maxmana%
+    var ssvar1 *= 100
+    var ssvar1 /= %var.player/mana%
+    if (var level >= 33, var tlevel >= 20, hasItem slot_10 Metadata Armor "Any Amount", hasItem slot_11 Metadata Armor "Any Amount", hasItem slot_12 Metadata Armor "Any Amount", hasItem slot_13 Metadata Armor "Any Amount", var ssvar1 >= 80) {
+        var mmulti += 15
+    }
+    //Venomous Set
+    if (var level >= 38, var tlevel >= 10, hasItem slot_19 Metadata Armor "Any Amouint", hasItem slot_20 Metadata Armor "Any Amouint", hasItem slot_21 Metadata Armor "Any Amouint", hasItem slot_22 Metadata Armor "Any Amouint") {
+        var damagemulti/DoT += 100
+    }
+    //Treant Set
+    if (placeholder %player.location.x% = %var.player/ssvar2/1%, placeholder %player.location.y% = %var.player/ssvar2/2%, placeholder %player.location.z% = %var.player/ssvar2/3%, hasItem slot_28 Metadata Armor "Any Amount", hasItem slot_29 Metadata Armor "Any Amount", hasItem slot_30 Metadata Armor "Any Amount", hasItem slot_31 Metadata Armor "Any Amount") {
+        var ssvar2 += 1
+    } else {
+        var ssvar2/1 = %player.location.x%
+        var ssvar2/2 = %player.location.y%
+        var ssvar2/3 = %player.location.z%
+        var ssvar2 unset
+    }
+    if (var level >= 38, var tlevel >= 15, hasItem slot_28 Metadata Armor "Any Amount", hasItem slot_29 Metadata Armor "Any Amount", hasItem slot_30 Metadata Armor "Any Amount", hasItem slot_31 Metadata Armor "Any Amount", var ssvar2 >= 2400) {
+        var def += 20
+        var hpr += 2
+    }
+
+goto gui "Dark Forest Shop" 1
+if (var gold >= 5500, hasItem slot_10 Metadata Anywhere "Equal or Greater Amount", hasItem slot_19 Metadata Anywhere "Equal or Greater Amount", hasItem slot_28 Metadata Anywhere "Equal or Greater Amount") {
+    removeItem slot_10 true
+    removeItem slot_19 true
+    removeItem slot_28 true
+    var gold -= 5500
+    giveItem slot_1 true
+    var sound = 2
+    function "Sounds" 
+    chat "&7[&a!&7] &aSuccessfully purchased the item!"
+} else {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&c✗ Not met the Requirements!"
+}
+
+goto gui "Dark Forest Shop" 2
+if (var gold >= 4800, hasItem slot_11 Metadata Anywhere "Equal or Greater Amount", hasItem slot_20 Metadata Anywhere "Equal or Greater Amount", hasItem slot_29 Metadata Anywhere "Equal or Greater Amount") {
+    removeItem slot_11 true
+    removeItem slot_20 true
+    removeItem slot_29 true
+    var gold -= 4800
+    giveItem slot_2 true
+    var sound = 2
+    function "Sounds"
+    chat "&7[&a!&7] &aSuccessfully purchased the item!"
+} else {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&c✗ Not met the Requirements!"
+}
+
+goto gui "Dark Forest Shop" 10
+if (var gold >= 5000, hasItem slot_12 Metadata Anywhere "Equal or Greater Amount", hasItem slot_21 Metadata Anywhere "Equal or Greater Amount") {
+    removeItem slot_12 true
+    removeItem slot_21 true
+    var gold -= 5000
+    giveItem slot_3 true
+    var sound = 2
+    function "Sounds"
+    chat "&7[&a!&7] &aSuccessfully purchased the item!"
+} else {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&c✗ Not met the Requirements!"
+}
+
+goto gui "Dark Forest Shop" 11
+if (var gold >= 3200, hasItem slot_13 Metadata Anywhere "Equal or Greater Amount", hasItem slot_22 Metadata Anywhere "Equal or Greater Amount") {
+    removeItem slot_13 true
+    removeItem slot_22 true
+    var gold -= 3200
+    giveItem slot_4 true
+    var sound = 2
+    function "Sounds"
+    chat "&7[&a!&7] &aSuccessfully purchased the item!"
+} else {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&c✗ Not met the Requirements!"
+}
+
+goto gui "Dark Forest Shop" 12
+if (var gold >= 6000, hasItem slot_14 Metadata Anywhere "Equal or Greater Amount", hasItem slot_23 Metadata Anywhere "Equal or Greater Amount", hasItem slot_32 Metadata Anywhere "Equal or Greater Amount") {
+    removeItem slot_14 true
+    removeItem slot_23 true
+    removeItem slot_32 true
+    var gold -= 6000
+    giveItem slot_5 true
+    var sound = 2
+    function "Sounds"
+    chat "&7[&a!&7] &aSuccessfully purchased the item!"
+} else {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&c✗ Not met the Requirements!"
+}
+
+goto gui "Dark Forest Shop" 13
+if (var gold >= 4500, hasItem slot_15 Metadata Anywhere "Equal or Greater Amount", hasItem slot_24 Metadata Anywhere "Equal or Greater Amount", hasItem slot_33 Metadata Anywhere "Equal or Greater Amount") {
+    removeItem slot_15 true
+    removeItem slot_24 true
+    removeItem slot_33 true
+    var gold -= 4500
+    giveItem slot_6 true
+    var sound = 2
+    function "Sounds"
+    chat "&7[&a!&7] &aSuccessfully purchased the item!"
+} else {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&c✗ Not met the Requirements!"
+}
+
+//Mobs
+    //Giant Treant
+    if (var attacking = 1 0) {
+        exit
+    } else {
+        var attacking = 1
+    }
+    var mobid = 32
+    var moblv =
+    var maxmobhp = 1000
+    var mobstr = 
+    var bdropchance1 = 20.0
+    var bdropchance2 = 15.0
+    var bdropchance3 = 8.0
+    var bdropchance4 = 3.0
+    var bdropchance5 = 1.0
+    var bdropchance6 = 0.5
+    var bdropchance7 = 0.3
+    function "Attacking"
+    //Venomous Spider
+    if (var attacking = 1 0) {
+        exit
+    } else {
+        var attacking = 1
+    }
+    var mobid = 31
+    var moblv = 
+    var maxmobhp = 750
+    var mobstr = 
+    var bdropchance1 = 25.0
+    var bdropchance2 = 18.0
+    var bdropchance3 = 10.0
+    var bdropchance4 = 5.0
+    var bdropchance5 = 1.0
+    var bdropchance6 = 0.5
+    var bdropchance7 = 0.8
+    var bdropchance8 = 0.4
+    function "Attacking"
+
+goto function "Item Drops 3"
+    if (var mobid = 31, placeholder %random.decimal/1 101% <= %var.player/dropchance1% 0) {
+        var dropped1 = 1
+        giveItem slot_1 true
+        chat "&6&lRARE DROP! &8( &fSharp Thorn &8) &8( &b%var.player/dropchance1%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    } 
+    if (var mobid = 31, placeholder %random.decimal/1 101% <= %var.player/dropchance2% 0) {
+        var dropped2 = 1
+        giveItem slot_2 true
+        chat "&6&lRARE DROP! &8( &aVenomous Fang &8) &8( &b%var.player/dropchance2%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    } 
+    
+    if (var mobid = 31, placeholder %random.decimal/1 101% <= %var.player/dropchance3% 0) {
+        var dropped3 = 1
+        giveItem slot_3 true
+        chat "&6&lRARE DROP! &8( &aForest Crystal &8) &8( &b%var.player/dropchance3%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    } 
+    
+    if (var mobid = 31, placeholder %random.decimal/1 101% <= %var.player/dropchance4% 0) {
+        var dropped4 = 1
+        giveItem slot_4 true
+        chat "&6&lRARE DROP! &8( &9Venom Sac &8) &8( &b%var.player/dropchance4%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    } 
+    if (var mobid = 31, placeholder %random.decimal/1 101% <= %var.player/dropchance5% 0) {
+        var dropped5 = 1
+        giveItem slot_5 true
+        chat "&9&lVERY RARE DROP! &8( &aVenomous Hood &8) &8( &b%var.player/dropchance5%% Drop &8)"
+        var sound = 8
+        function "Sounds"
+    } 
+    
+    if (var mobid = 31, placeholder %random.decimal/1 101% <= %var.player/dropchance6% 0) {
+        var dropped6 = 1
+        giveItem slot_6 true
+        chat "&9&lVERY RARE DROP! &8( &fVenomous Boots &8) &8( &b%var.player/dropchance6%% Drop &8)"
+        var sound = 8
+        function "Sounds"
+    } 
+    
+    if (var mobid = 31, placeholder %random.decimal/1 101% <= %var.player/dropchance7% 0) {
+        var dropped7 = 1
+        giveItem slot_7 true
+        chat "&9&lVERY RARE DROP! &8( &9Spider Fang Dagger &8) &8( &b%var.player/dropchance7%% Drop &8)"
+        var sound = 8
+        function "Sounds"
+    } 
+    
+    if (var mobid = 31, placeholder %random.decimal/1 101% <= %var.player/dropchance8% 0) {
+        var dropped8 = 1
+        giveItem slot_8 true
+        chat "&9&lVERY RARE DROP! &8( &5Arachnid Eye &8) &8( &b%var.player/dropchance8%% Drop &8)"
+        var sound = 8
+        function "Sounds"
+    }
+    if (var mobid = 32, placeholder %random.decimal/1 101% <= %var.player/dropchance1% 0) {
+        var dropped1 = 1
+        giveItem slot_10 true
+        chat "&6&lRARE DROP! &8( &fTreant Bark &8) &8( &b%var.player/dropchance1%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    }
+    if (var mobid = 32, placeholder %random.decimal/1 101% <= %var.player/dropchance2% 0) {
+        var dropped2 = 1
+        giveItem slot_11 true
+        chat "&6&lRARE DROP! &8( &aForest Crystal &8) &8( &b%var.player/dropchance2%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    }
+    if (var mobid = 32, placeholder %random.decimal/1 101% <= %var.player/dropchance3% 0) {
+        var dropped3 = 1
+        giveItem slot_12 true
+        chat "&6&lRARE DROP! &8( &9Ancient Branch &8) &8( &b%var.player/dropchance3%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    }
+    if (var mobid = 32, placeholder %random.decimal/1 101% <= %var.player/dropchance4% 0) {
+        var dropped4 = 1
+        giveItem slot_13 true
+        chat "&6&lRARE DROP! &8( &5Treant's Heart &8) &8( &b%var.player/dropchance4%% Drop &8)"
+        var sound = 3
+        function "Sounds"
+    }
+    
+    if (var mobid = 32, placeholder %random.decimal/1 101% <= %var.player/dropchance5% 0) {
+        var dropped5 = 1
+        giveItem slot_14 true
+        chat "&9&lVERY RARE DROP! &8( &9Treant Crown &8) &8( &b%var.player/dropchance5%% Drop &8)"
+        var sound = 8
+        function "Sounds"
+    }
+    
+    if (var mobid = 32, placeholder %random.decimal/1 101% <= %var.player/dropchance6% 0) {
+        var dropped6 = 1
+        giveItem slot_15 true
+        chat "&9&lVERY RARE DROP! &8( &9Treant Bark Armor &8) &8( &b%var.player/dropchance6%% Drop &8)"
+        var sound = 8
+        function "Sounds"
+    }
+    
+    if (var mobid = 32, placeholder %random.decimal/1 101% <= %var.player/dropchance7% 0) {
+        var dropped7 = 1
+        giveItem slot_16 true
+        chat "&9&lVERY RARE DROP! &8( &5Ancient Treant Shield &8) &8( &b%var.player/dropchance7%% Drop &8)"
+        var sound = 8
+        function "Sounds"
+    }
+    
+//Mobs
+//Giant Treant
+    goto npc "a"
+    if (var attacking = 1 0) {
+        exit
+    } else {
+        var attacking = 1
+    }
+    var mobid = 32
+    var moblv = 33
+    var maxmobhp = 1000
+    var mobstr = 20
+    var mobgold = 75
+    var mobxp = 950
+    var bdropchance1 = 20.0
+    var bdropchance2 = 15.0
+    var bdropchance3 = 8.0
+    var bdropchance4 = 3.0
+    var bdropchance5 = 1.0
+    var bdropchance6 = 0.5
+    var bdropchance7 = 0.3
+    function "Attacking"
+    goto function "Mob Abilities"
+        if (var mobid = 32, placeholder %random.int/1 101% <= 20) {
+            chat "&7[&2!&7] &2Root Binding-Attack!"
+            sound "Item Flintandsteel Use" 0.7 0.1 "Invokers Location"
+            var mavar1 = 5
+        }
+//Venomous Spider
+        goto npc "b"
+        if (var attacking = 1 0) {
+            exit
+        } else {
+            var attackling = 1
+        }
+        var mobid = 31
+        var moblv = 38
+        var maxmobhp = 750
+        var mobstr = 35
+        var mobgold = 120
+        var mobxp = 1250
+        var bdropchance1 = 25.0
+        var bdropchance2 = 18.0
+        var bdropchance3 = 10.0
+        var bdropchance4 = 5.0
+        var bdropchance5 = 1.0
+        var bdropchance6 = 0.5
+        var bdropchance7 = 0.8
+        var bdropchance8 = 0.4
+        function "Attacking"
+        goto function "Mob Abilities"
+            if () {
+                var resistancevar = var resistance
+                var resistancevar /= 1000
+                var resistancevar *= 1000
+                var resistancevar -= var resistance
+                var resistancevar *= -1
+            }
+            if (var mobid = 31, placeholder %random.int/1 201% > %var.player/resistancevar%) {
+                applyPotion "Poison" 5 1 true true
+            }
+
+//Nature's Ring
+goto function "Accessories Stats 1"
+    if (var accvar17 = 2) {
+        var acchpr += 3
+        var accmaxhp += 30
+    }
+//Poison Amulet
+//Forest Spirit Pendant
+goto function "Accessories Stats 1"
+    if (var accvar19 = 2) {
+        var accmaxmana += 100
+        var dmgmulti += 20
+        var accmmulti += 15
+    }
+//Ancient Treant Shield
+goto function "Accessories Stats 1"
+    if (var accvar20 = 2) {
+        var accdef += 25
+        var acchp += 40
+    }
+//Arachnid Eye
+goto function "Accessories Stats 1"
+    if (var accvar21 = 2) {
+        var acccc += 20
+    }
+//Healing Herb
+goto function "Consumables"
+    if (var level >= 30, var tlevel >= 10, var consumeid = 4) {
+        var consumetime4 += 120
+        var hp += 20
+        removeItem slot_6 true
+        sound "Drink" 0.7 1.0 "Invokers Location"
+        chat "&7[&a!&7] Used &fHealing Herb&7!"
+        exit
+    }
+goto function "Consumables Stat"
+    if (var consumetime4 >= 1) {
+        var hpr += 2
+        var consumetime4 -= 1
+    }
+//Antidote Potion
+goto function "Consumables"
+    if (var level >= 35, var consumeid = 5) {
+        var consumetime5 += 180
+        applyPotion "Poison" 1 1 true true
+        removeItem Slot_7 true
+        sound "Drink" 0.7 1.0 "Invokers Location"
+        chat "&7[&a!&7] Used &9Mummy's Curse Antidote&7!"
+        exit
+    }
+goto function "Consumables Stat"
+    if (var consumetime5 >= 1) {
+        var resistance = 50000
+        var consumetime5 -= 1
+    }
+//Nature's Blessing
+goto function "Consumables"
+    if (var level >= 33, var tlevel >= 15, var consumeid = 6) {
+        var consumetime6 += 180
+        var hp += 15
+        var mana += 25
+        removeItem slot_8 true
+        sound "Drink" 0.7 1.0 "Invokers Location"
+        chat "&7[&a!&7] Used &9Mummy's Curse Antidote&7!"
+        exit
+    }
+goto function "Consumables Stat"
+    if (var consumetime6 >= 1) {
+        var strmulti += 8
+        var consumetime6 -= 1
+    }

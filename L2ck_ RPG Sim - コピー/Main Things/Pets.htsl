@@ -1,0 +1,597 @@
+goto function "Pets Formula 1"
+    // ===== 軽量版（3個ずつ） =====
+
+var tmp = %var.player/petstorage1%
+
+// --- 1～3 ---
+if () {
+    var petvar1 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar1 -= %var.player/petformulavar1%
+    var petvar1 *= 2
+    var petvar1 += 2
+
+    var tmp /= 3
+    var petvar2 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar2 -= %var.player/petformulavar1%
+    var petvar2 *= 2
+    var petvar2 += 2
+
+    var tmp /= 3
+    var petvar3 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar3 -= %var.player/petformulavar1%
+    var petvar3 *= 2
+    var petvar3 += 2
+}
+
+// --- 4～6 ---
+if () {
+    var tmp /= 3
+    var petvar4 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar4 -= %var.player/petformulavar1%
+    var petvar4 *= 2
+    var petvar4 += 2
+
+    var tmp /= 3
+    var petvar5 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar5 -= %var.player/petformulavar1%
+    var petvar5 *= 2
+    var petvar5 += 2
+
+    var tmp /= 3
+    var petvar6 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar6 -= %var.player/petformulavar1%
+    var petvar6 *= 2
+    var petvar6 += 2
+}
+
+// --- 7～9 ---
+if () {
+    var tmp /= 3
+    var petvar7 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar7 -= %var.player/petformulavar1%
+    var petvar7 *= 2
+    var petvar7 += 2
+
+    var tmp /= 3
+    var petvar8 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar8 -= %var.player/petformulavar1%
+    var petvar8 *= 2
+    var petvar8 += 2
+
+    var tmp /= 3
+    var petvar9 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar9 -= %var.player/petformulavar1%
+    var petvar9 *= 2
+    var petvar9 += 2
+}
+
+// --- 10～12 ---
+if () {
+    var tmp /= 3
+    var petvar10 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar10 -= %var.player/petformulavar1%
+    var petvar10 *= 2
+    var petvar10 += 2
+
+    var tmp /= 3
+    var petvar11 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar11 -= %var.player/petformulavar1%
+    var petvar11 *= 2
+    var petvar11 += 2
+
+    var tmp /= 3
+    var petvar12 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar12 -= %var.player/petformulavar1%
+    var petvar12 *= 2
+    var petvar12 += 2
+}
+
+// --- 13～15 ---
+if () {
+    var tmp /= 3
+    var petvar13 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar13 -= %var.player/petformulavar1%
+    var petvar13 *= 2
+    var petvar13 += 2
+
+    var tmp /= 3
+    var petvar14 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar14 -= %var.player/petformulavar1%
+    var petvar14 *= 2
+    var petvar14 += 2
+
+    var tmp /= 3
+    var petvar15 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar15 -= %var.player/petformulavar1%
+    var petvar15 *= 2
+    var petvar15 += 2
+}
+
+// --- 16～18 ---
+if () {
+    var tmp /= 3
+    var petvar16 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar16 -= %var.player/petformulavar1%
+    var petvar16 *= 2
+    var petvar16 += 2
+
+    var tmp /= 3
+    var petvar17 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar17 -= %var.player/petformulavar1%
+    var petvar17 *= 2
+    var petvar17 += 2
+
+    var tmp /= 3
+    var petvar18 = %var.player/tmp%
+    var petformulavar1 = %var.player/tmp%
+    var petformulavar1 /= 3
+    var petformulavar1 *= 3
+    var petvar18 -= %var.player/petformulavar1%
+    var petvar18 *= 2
+    var petvar18 += 2
+}
+
+// --- 実行 ---
+function "Pets Stats 1"
+pause 10
+
+// --- 初期化①（25個以内） ---
+if () {
+    var tmp unset
+    var petformulavar1 unset
+    var petvar1 unset
+    var petvar2 unset
+    var petvar3 unset
+    var petvar4 unset
+    var petvar5 unset
+    var petvar6 unset
+    var petvar7 unset
+    var petvar8 unset
+    var petvar9 unset
+    var petvar10 unset
+    var petvar11 unset
+    var petvar12 unset
+    var petvar13 unset
+    var petvar14 unset
+    var petvar15 unset
+    var petvar16 unset
+    var petvar17 unset
+    var petvar18 unset
+}
+
+function "Pets Formula 1"
+closeMenu
+pause 5
+if (var petvar1 = 2, var pettake = 1) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cDespawned your pet!"
+    giveItem slot_28 true
+    var petstorage1 += 1
+    var petsummoned = 0
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+if (var petvar1 = 6, var pettake = 1) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cTook your pet!"
+    giveItem slot_28 true
+    var petstorage1 -= 1
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"    
+    exit
+}
+if (var petvar1 = 2) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cDespawned your pet!"
+    var petstorage1 += 2
+    var petsummoned = 0
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+if (var petsummoned = 1) {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cYou already summoned another pet!"
+    exit
+}
+if (var tlevel < 14) {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cYou don't have enough level to spawn this pet!"
+    exit
+}
+if (var petvar1 = 6) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&a!&7] Successfully summoned your pet!"
+    var petstorage1 -= 2
+    var petsummoned = 1
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+if (hasItem slot_28 Metadata Anywhere "Any Amount") {
+    removeItem slot_28 true
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&a!&7] Successfully summoned your pet!"
+    var petstorage1 -= 1
+    var petsummoned = 1
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+chat "&7[&c!&7] &cYou don't have the pet!"
+sound "Anvil Land" 0.7 1.0 "Invokers Location"
+
+
+goto function "Pets Stats 1"
+    if () {
+        var petmaxhp = 0
+        var petdef = 0
+        var petstr = 0
+        var petcc = 0
+        var petcd = 0
+        var pethpr = 0
+        var petmaxmana = 0
+        var peteff = 0
+        var petwoodmf = 0
+        var petminemf = 0
+        var petfxpmulti = 0
+        var petmaxoxygen = 0
+        var pethprmulti = 0
+        var peteffmulti = 0
+        var petstrmulti = 0
+    }
+    if (var petvar1 = 2) {
+        var peteff += 5 
+        var petwoodmf += 7
+        var petmaxhp += 10
+        var petstr += 5
+        var petfxpmulti += %var.player/tlevel%
+    }
+
+goto command "/logs"
+    if () {
+        var pavar1 = %var.player/petstorage1%
+        var pavar1 /= 2
+        var pavar1 *= 2
+        var pavar1 -= %var.player/petstorage1%
+    }
+    if or (var pavar1 = -2, var pavar1 = 0, hasItem slot_29 Metadata Anywhere "Any Amount") {
+        chat "&7[&a!&7] &7Successfully opened &aLogs Bag&7!"
+        sound "Orb Pickup"
+        displayMenu "Logs"
+    } else {
+        chat "&7[&c!&7] &cERROR! You don't have &9Timber Wolf Pet &cto use this command!"
+        sound "Anvil Land"
+        exit
+    }
+    
+goto gui "Pets Menu" 1
+function "Pets Formula 1"
+closeMenu
+pause 5
+if (var petvar2 = 2, var pettake = 1) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cDespawned your pet!"
+    giveItem slot_28 true
+    var petstorage1 += 3
+    var petsummoned = 0
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+if (var petvar2 = 6, var pettake = 1) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cTook your pet!"
+    giveItem slot_28 true
+    var petstorage1 -= 3
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"    
+    exit
+}
+if (var petvar2 = 2) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cDespawned your pet!"
+    var petstorage1 += 6
+    var petsummoned = 0
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+if (var petsummoned = 1) {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cYou already summoned another pet!"
+    exit
+}
+if (var petvar2 = 6) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&a!&7] Successfully summoned your pet!"
+    var petstorage1 -= 6
+    var petsummoned = 1
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+if (hasItem slot_28 Metadata Anywhere "Any Amount") {
+    removeItem slot_28 true
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&a!&7] Successfully summoned your pet!"
+    var petstorage1 -= 3
+    var petsummoned = 1
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+chat "&7[&c!&7] &cYou don't have the pet!"
+sound "Anvil Land" 0.7 1.0 "Invokers Location"
+
+goto gui "Pets Menu" 2
+function "Pets Formula 1"
+closeMenu
+pause 5
+if (var petvar3 = 2, var pettake = 1) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cDespawned your pet!"
+    giveItem slot_29 true
+    var petstorage1 += 9
+    var petsummoned = 0
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+if (var petvar3 = 6, var pettake = 1) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cTook your pet!"
+    giveItem slot_28 true
+    var petstorage1 -= 9
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"    
+    exit
+}
+if (var petvar3 = 2) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cDespawned your pet!"
+    var petstorage1 += 18
+    var petsummoned = 0
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+if (var petsummoned = 1) {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cYou already summoned another pet!"
+    exit
+}
+if (var petvar3 = 6) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&a!&7] Successfully summoned your pet!"
+    var petstorage1 -= 18
+    var petsummoned = 1
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+if (hasItem slot_29 Metadata Anywhere "Any Amount") {
+    removeItem slot_29 true
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&a!&7] Successfully summoned your pet!"
+    var petstorage1 -= 9
+    var petsummoned = 1
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+chat "&7[&c!&7] &cYou don't have the pet!"
+sound "Anvil Land" 0.7 1.0 "Invokers Location"
+
+goto gui "Pets Menu" 13
+function "Pets Formula 1"
+closeMenu
+pause 5
+if (var petvar4 = 2, var pettake = 1) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cDespawned your pet!"
+    giveItem slot_16 true
+    var petstorage1 += 27
+    var petsummoned = 0
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+if (var petvar4 = 6, var pettake = 1) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cTook your pet!"
+    giveItem slot_16 true
+    var petstorage1 -= 27
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"    
+    exit
+}
+if (var petvar4 = 2) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cDespawned your pet!"
+    var petstorage1 += 54
+    var petsummoned = 0
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+if (var petsummoned = 1) {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cYou already summoned another pet!"
+    exit
+}
+if (var level >= 30, var tlevel >= 20) {
+} else {
+    chat "&7[&c!&7] &cYou don't have enough level to spawn this pet!"
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    exit
+}
+if (var petvar4 = 6) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&a!&7] Successfully summoned your pet!"
+    var petstorage1 -= 54
+    var petsummoned = 1
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+if (hasItem slot_16 Metadata Anywhere "Any Amount") {
+    removeItem slot_16 true
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&a!&7] Successfully summoned your pet!"
+    var petstorage1 -= 27
+    var petsummoned = 1
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+chat "&7[&c!&7] &cYou don't have the pet!"
+sound "Anvil Land" 0.7 1.0 "Invokers Location"
+
+
+goto gui "Pets Menu" 14
+function "Pets Formula 1"
+closeMenu
+pause 5
+if (var petvar5 = 2, var pettake = 1) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cDespawned your pet!"
+    giveItem slot_17 true
+    var petstorage1 += 81
+    var petsummoned = 0
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+if (var petvar5 = 6, var pettake = 1) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cTook your pet!"
+    giveItem slot_17 true
+    var petstorage1 -= 81
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"    
+    exit
+}
+if (var petvar5 = 2) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cDespawned your pet!"
+    var petstorage1 += 162
+    var petsummoned = 0
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+if (var petsummoned = 1) {
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    chat "&7[&c!&7] &cYou already summoned another pet!"
+    exit
+}
+if (var level >= 30, var tlevel >= 20) {
+} else {
+    chat "&7[&c!&7] &cYou don't have enough level to spawn this pet!"
+    sound "Anvil Land" 0.7 1.0 "Invokers Location"
+    exit
+}
+if (var petvar5 = 6) {
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&a!&7] Successfully summoned your pet!"
+    var petstorage1 -= 162
+    var petsummoned = 1
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+if (hasItem slot_17 Metadata Anywhere "Any Amount") {
+    removeItem slot_17 true
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    chat "&7[&a!&7] Successfully summoned your pet!"
+    var petstorage1 -= 81
+    var petsummoned = 1
+    function "Pets Formula 1"
+    displayMenu "Pets Menu"
+    exit
+}
+chat "&7[&c!&7] &cYou don't have the pet!"
+sound "Anvil Land" 0.7 1.0 "Invokers Location"
+
+goto function "Pets Stats 1"
+    if (var petvar2 = 2) {
+        var petdef += 10
+        var peteffmulti += 20
+        var pethprmulti += 30
+        var petmaxoxygen += 50
+        var petab = 2
+
+    }
+    if (var petvar3 = 2) {
+        var petmaxhp += 20
+        var petdef += 5
+        var petstrmulti += 15
+        var petab = 3
+    }
+goto function "Pets Ability 1"
+    if (var petab = 1) {
+        var petfxpmulti += %var.player/tlevel%
+    }
+    if (var petab = 3) {
+        var petmfvar = %var.player/str%
+        var petmfvar /= 25
+        var petmf = %var.player/petmfvar%
+        var petmfvar unset
+    }
+goto function "Attack Skill 1"
+    if (var mobhp = %var.player/maxmobhp%, var petab = 3, placeholder %random.int/1 101% <= 50) {
+        var takendmg = 0
+    }

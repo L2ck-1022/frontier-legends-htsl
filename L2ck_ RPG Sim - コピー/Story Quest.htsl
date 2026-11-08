@@ -1,0 +1,256 @@
+if (var talking = 1 0) {
+    exit
+} else {
+    var talking = 1
+}
+var sqvar = %var.player/sqstorage1%
+if (var sqvar >= 1) {
+    chat "&e[NPC] &6Queen. Mary&f: The &5Hunter Fox&f walks with you now—return when the sands stir again."
+    sound "Villager No" 0.7 2.0 "Invokers Location"
+    var talking unset
+    exit
+}
+var sqvar unset
+if (hasItem slot_31 Metadata Anywhere "Equal or Greater Amount", var sq2var = 54) {
+    removeItem slot_31 true
+    chat "&e[NPC] &6Queen. Mary&f: You have walked the path of shadow and light."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 60
+    chat "&e[NPC] &6Queen. Mary&f: The &5Hunter Fox&f has seen your journey."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &6Queen. Mary&f: Its trust is earned, not given."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 40
+    chat "&e[NPC] &6Queen. Mary&f: It shall now be yours, swift as the desert wind."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 60
+    giveItem slot_32 true
+    var sound = 7
+    function "Sounds"
+    chat &a
+    chat "&a✍ &d&lPact of the Sandshadow&a Quest&8 Completed:"
+    chat "&8↳ &a+ &5Hunter Fox Pet"
+    chat "&a"
+    var sq2var unset
+    var sqstorage1 += 2
+    var talking unset
+    exit
+}
+if (var sq2var = 54) {
+    chat "&e[NPC] &6Queen. Mary&f: You bear the marks of the hunt."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 40
+    chat "&e[NPC] &6Queen. Mary&f: One final trial remains—the &eSandwoven Feather&7."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &6Queen. Mary&f: It lies hidden where the dunes meet the sky."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    var talking unset
+    exit
+}
+if (hasItem slot_30 Metadata Anywhere "Equal or Greater Amount", var sq2var = 53) {
+    removeItem slot_30 true
+    chat "&e[NPC] &6Queen. Mary&f: You bear the marks of the hunt."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 40
+    chat "&e[NPC] &6Queen. Mary&f: One final trial remains—the &eSandwoven Feather&7."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &6Queen. Mary&f: It lies hidden where the dunes meet the sky."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    var sq2var = 54
+    var talking unset
+    exit
+}
+if or (var sq2var = 52, var sq2var = 53) {
+    chat "&e[NPC] &6Queen. Mary&f: The shadows thin. You have carved a path through the storm."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 60
+    chat "&e[NPC] &6Queen. Mary&f: Now, retrieve two &eSandfangs&f—the desert's mark of trial."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &6Queen. Mary&f: They are rare, and only the persistent shall find them."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &6Queen. Mary&f: &5Hunter Fox &fwatches your progress with keen eyes."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    var sq2var = 53
+    var talking unset
+
+}
+if (var sq2var >= 1, var sq2var <= 51) {
+    chat "&e[NPC] &6Queen. Mary&f: The desert whispers of a swift guardian—the &5Hunter Fox&7."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 60
+    chat "&e[NPC] &6Queen. Mary&f: But shadows cloud its path. &6Desert Stalkers&f roam freely."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 60
+    chat "&e[NPC] &6Queen. Mary&f: Defeat &nfifty of them&r to begin your trial."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    var sq2var = 2
+    var talking unset
+}
+if (var sq2var >= 1 0) {
+    exit
+}
+if (hasItem slot_28 Metadata Anywhere "Equal or Greater Amount", var sq1var = 12) {
+    removeItem slot_28 true
+    chat "&e[NPC] &6Queen. Mary&f: You have unearthed the heart of the mesa."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &6Queen. Mary&f: The &9Rust Mole&f recognizes your resolve."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &6Queen. Mary&f: Its loyalty is not given lightly."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 40
+    chat "&e[NPC] &6Queen. Mary&f: But you have earned it through strength and patience."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &6Queen. Mary&f: The guardian of the deep shall now walk beside you."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 60
+    giveItem slot_29 true
+    var sound = 7
+    function "Sounds"
+    chat &a
+    chat "&a✍ &d&lPact of the Deep&a Quest&8 Completed:"
+    chat "&8↳ &a+ &9Rust Mole Pet"
+    chat "&a"
+    var sq1var unset
+    var sq2var = 1
+    var sqstorage1 += 1
+    var talking unset
+    exit
+}
+if or (var sq1var = 11 0, var sq1var = 12 0) {
+    chat "&e[NPC] &6Queen. Mary&f: The tremors have ceased. You have calmed the earth."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 60
+    chat "&e[NPC] &6Queen. Mary&f: Now, seek the &eRust Cores&r—fragments of the mesa's ancient will."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &6Queen. Mary&f: &aThree cores&f must be found to awaken the guardian."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    var sq1var = 12
+    var talking unset
+}
+if (var sq1var <= 10 0) {
+    chat "&e[NPC] &6Queen. Mary&f: The &9Rust Mole&f sleeps beneath our sacred dunes."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 60
+    chat "&e[NPC] &6Queen. Mary&f: But the ground trembles. &nSand Crawlers&r rise and disturb the earth."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &6Queen. Mary&f: You must defeat &nten of them&r to restore balance."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &6Queen. Mary&f: Only then may you seek the Rust Cores buried in silence."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    var sq1var = 1
+    var talking unset
+}
+
+goto function "Story Quest Formula" 
+    if () {
+        var sqvar/display = %var.player/sqstorage1%
+        var sqvar/display &= 1
+        var sq1var/display = %var.player/sqvar/display%
+        var sq1var/display *= -2
+        var sq1var/display += 4
+        var sqvar/display = %var.player/sqstorage1%
+        var sqvar/display &= 2
+        var sq2var/display = %var.player/sqvar/display%
+        var sq2var/display *= -2
+        var sq2var/display += 4
+    }
+    pause 5
+    if () {
+        var sqvar/display unset
+        var sq1var/display unset
+        var sq2var/display unset
+    }
+
+
+
+
+if (var sq0var = 0 0) {
+    var sq0var = 0
+    chat "&e[NPC] &bGuide&f: Welcome, rookie adventurer! Let's start with combat basics!"
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &bGuide&f: &aA Forest Slime &8( &a52 103 -48.5 &8) &fhas appeared near the village."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &bGuide&f: It's a weak monster, but don't let your guard down. Go defeat it."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+}
+if (var sq0var = 1 0) {
+    chat "&e[NPC] &bGuide&f: Well Done! Monsters sometimes drop items when defeated. Always check your loot."
+    sound "Villager Yes" 0.7 1.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &bGuide&f: Next, let's learn about adventurer economics."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 40
+    chat "&e[NPC] &bGuide&f: You can sell unwanted items for gold. Go to merchant and try selling something."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+}
+if or (var sq0var = 2 0, var sq0var = 3 0) {
+    chat "&e[NPC] &bGuide&f: You've got some gold now. Time to learn about shopping."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &bGuide&f: Adventurers need various items for their journeys. Go buy something at the &3Blacksmith&f."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    var sq0var = 3 0
+}
+
+
+
+
+//Merchant
+if (var sq0var = 1 0) {
+    chat "&e[NPC] &6Mechant&f: Welcome! Good work on that hunt. Hold the item you want to sell, and I'll buy it right away."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 60
+}
+
+//Sold
+if (var sq0var = 1 0) {
+    chat "&e[NPC] &6Merchant&f: Thank you! Come back anytime you have something to sell."
+    sound "Villager Yes" 0.7 1.0 "Invokers Location"
+    var sq0var = 2
+}
+
+//Bought
+if (var sq0var = 3 0) {
+    chat "&e[NPC] &bGuide&f: Finally, let's learn about gathering. Combat isn't the only skill an adventurer needs."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location" 
+    pause 50
+    chat "&e[NPC] &bGuide&f: You'll see trees in the forest. Gather some wood from them."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    giveItem slot_1 true
+    pause 50
+    chat "&e[NPC] &bGuide&f: You can use the axe I just gave you to cut tree for now."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    var sq0var = 4 0
+}
+
+//gathered trees
+if (var sq0var = 4 0) {
+    chat "&e[NPC] &bGuide&f: Perfect! That completes the tutorial. Combat, selling, buying, gathering..."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &bGuide&f: these are the fundamentals of being an adventurer."
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    chat "&e[NPC] &bGuide&f: Now, you can open Quests Menu for completing this. Good Luck!"
+    sound "Villager Yes" 0.7 2.0 "Invokers Location"
+    pause 50
+    var sound = 7
+    function "Sounds"
+    chat "&a"
+    chat "&a✍ &a&lTutorial&a Quest&8 Completed:"
+    chat "&8↳ &a+ &7Access to &a&lQuests Menu"
+    chat "&a"
+}

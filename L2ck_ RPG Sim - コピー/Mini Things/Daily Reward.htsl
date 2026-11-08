@@ -1,0 +1,34 @@
+goto function "Main Menu"
+    var drewardct_t = drewardtime
+    var drewardct_t -= globalvar uptime_t
+    if (var drewardct_t <= 0 0) {
+        var drewardct_t = 0
+    }
+    if () {
+        var drewardct_h = var drewardct_t
+        var drewardct_h /= 72000
+        var drewardct_m = var drewardct_h
+        var drewardct_m *= -72000
+        var drewardct_m += var drewardct_t
+        var drewardct_m /= 1200
+        var drewardct_s = var drewardct_m
+        var drewardct_s *= -1200
+        var drewardct_s += var drewardct_t
+        var drewardct_s /= 20
+    }
+
+if () {
+    var drewardct_h unset
+    var drewardct_m unset
+    var drewardct_s unset
+    var drewardct_t unset
+}
+
+if (var drewardct_t <= 0) {
+    var drewardtime = globalvar uptime_t
+    var drewardtime += 1440000
+    var gem += 20
+    chat "&d&lDAILY REWARD! &8&l| &a+20❖"
+    sound "Orb Pickup" 0.7 1.0 "Invokers Location"
+    function "Main Menu"
+}
